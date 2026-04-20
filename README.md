@@ -12,11 +12,18 @@ source: "dataset/raw/makan_bergizi_gratis" dan "dataset/raw/mbg"
 
 ## MERGE & VALIDATION
 
-data: 122.620
-detail: 41.933 [keyword_1] + 80.687 [keyword_2]
+data: 119.380
+detail: 41.933 [keyword_1] + 77.447 [keyword_2]
 source: "dataset/merge/merged_mbg_full.csv"
 
 ## ELIMINATION
 
-data: 49.389
-detail: 28.142 [keyword_1] + 21.247 [keyword_2]
+data: 52.629
+detail: 28.142 [keyword_1] + 21.250 [keyword_2] + 3.237 [keyword_2]
+
+# SAMPLING DATA
+
+data: 570 \* 12 = 6.840
+data 1: seed batches label studio (200)
+data 2: refill batches label studio (350)
+data 3: refill batch val (20)
