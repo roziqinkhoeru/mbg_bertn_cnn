@@ -27,3 +27,8 @@ data: 570 \* 12 = 6.840
 data 1: seed batches label studio (200)
 data 2: refill batches label studio (350)
 data 3: refill batch val (20)
+
+# FINAL DATA
+
+data: 6.646
+source: "dataset/final/final_validated_mbg.csv"
