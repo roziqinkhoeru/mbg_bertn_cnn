@@ -1,0 +1,253 @@
+6.2s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.2s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.2s 3 0.00s - to python to disable frozen modules.
+6.2s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+6.8s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.8s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.8s 7 0.00s - to python to disable frozen modules.
+6.8s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+7.8s 9 Environment: Google Colab
+12.7s 10 ✅ GPU OK: Tesla T4 | compute capability: sm_75
+12.7s 11 ✅ Setup Kaggle selesai.
+29.7s 12 Device  : cuda
+29.7s 13 GPU     : Tesla T4
+29.7s 14 VRAM    : 15.6 GB
+29.7s 15 Compute : sm_75
+29.7s 16 PyTorch : 2.10.0+cu128
+29.7s 17 ✅ Konfigurasi berhasil dimuat.
+29.7s 18 Phase 1   : 12 kombinasi × 5 fold = 60 runs  (~9–10 jam)
+29.7s 19 Phase 2A  : 12 kombinasi × 5 fold = 60 runs  (~9 jam)
+29.7s 20 Phase 2B  : 12 kombinasi × 5 fold = 60 runs  (~9 jam)
+29.7s 21 Phase 3   : 2 kondisi × 5 fold = 10 runs + eval (~3 jam)
+29.7s 22 Total     : ~190 runs (~30 jam)
+29.9s 23 Memuat data berlabel...
+29.9s 24 Total data berlabel: 6,642
+29.9s 25 positive    : 2,625 (39.5%)
+29.9s 26 negative    : 2,085 (31.4%)
+29.9s 27 neutral     : 1,932 (29.1%)
+29.9s 28 
+29.9s 29 Test set baru dibuat dan index disimpan.
+29.9s 30 Train+Val : 5,313 | Test (FIXED): 1,329
+29.9s 31 Distribusi test set:
+29.9s 32 positive    : 525 (39.5%)
+29.9s 33 negative    : 417 (31.4%)
+29.9s 34 neutral     : 387 (29.1%)
+30.0s 35 Memuat tokenizer: indobenchmark/indobert-base-p2...
+30.2s 36 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+30.2s 37 
+30.2s 38 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+30.7s 39 ✅ Tokenizer berhasil dimuat.
+30.7s 40 ✅ Dataset class dan arsitektur IndoBERTCNN berhasil didefinisikan.
+30.7s 41 Activation candidates: relu | gelu | elu
+30.7s 42 Fixed: GlobalMaxPool, Dense(256), padding=kernel_size//2
+30.7s 43 ✅ Training utilities berhasil didefinisikan.
+30.7s 44 Optimizer  : AdamW differential LR + weight decay exclusion
+30.7s 45 Activation : relu | gelu | elu (Phase 2)
+30.7s 46 Recording  : epoch_history (semua kombinasi) + fold_details
+30.8s 47 Phase 1: 12 kombinasi × 5 fold = 60 runs
+30.8s 48 CNN default: {'ngram': [1, 2, 3], 'filter_size': 128, 'dropout': 0.3, 'activation': 'gelu'}
+30.8s 49 [01] lr_bert=1e-05 | lr_cnn=1e-04 | bs=16
+30.8s 50 [02] lr_bert=1e-05 | lr_cnn=1e-04 | bs=32
+30.8s 51 [03] lr_bert=1e-05 | lr_cnn=1e-03 | bs=16
+30.8s 52 [04] lr_bert=1e-05 | lr_cnn=1e-03 | bs=32
+30.8s 53 [05] lr_bert=2e-05 | lr_cnn=1e-04 | bs=16
+30.8s 54 [06] lr_bert=2e-05 | lr_cnn=1e-04 | bs=32
+30.8s 55 [07] lr_bert=2e-05 | lr_cnn=1e-03 | bs=16
+30.8s 56 [08] lr_bert=2e-05 | lr_cnn=1e-03 | bs=32
+30.8s 57 [09] lr_bert=3e-05 | lr_cnn=1e-04 | bs=16
+30.8s 58 [10] lr_bert=3e-05 | lr_cnn=1e-04 | bs=32
+30.8s 59 [11] lr_bert=3e-05 | lr_cnn=1e-03 | bs=16
+30.8s 60 [12] lr_bert=3e-05 | lr_cnn=1e-03 | bs=32
+30.9s 61 
+30.9s 62 ─────────────────────────────────────────────────────────────────
+30.9s 63 [01/12] lb=1e-05_lc=1e-04_bs=16
+30.9s 64 ─────────────────────────────────────────────────────────────────
+584.7s 65 ├─ Fold 1/5 → F1=0.8428 | Acc=0.8448 | best_ep=2
+1131.4s 66 ├─ Fold 2/5 → F1=0.8450 | Acc=0.8485 | best_ep=2
+1568.1s 67 ├─ Fold 3/5 → F1=0.8372 | Acc=0.8429 | best_ep=1
+2113.7s 68 ├─ Fold 4/5 → F1=0.8394 | Acc=0.8418 | best_ep=2
+2659.1s 69 ├─ Fold 5/5 → F1=0.8532 | Acc=0.8550 | best_ep=2
+2659.1s 70 └─ SELESAI | F1-Macro: 0.8435 ± 0.0055
+2659.1s 71 Acc=0.8466 | Prec=0.8445 | Rec=0.8466
+2659.1s 72 Waktu: 43.8 menit | Sisa: 8j 1m (11 tersisa)
+2659.1s 73 ✔ Progress disimpan
+2659.1s 74 
+2659.1s 75 ─────────────────────────────────────────────────────────────────
+2659.1s 76 [02/12] lb=1e-05_lc=1e-04_bs=32
+2659.1s 77 ─────────────────────────────────────────────────────────────────
+3158.7s 78 ├─ Fold 1/5 → F1=0.8372 | Acc=0.8420 | best_ep=2
+3658.3s 79 ├─ Fold 2/5 → F1=0.8481 | Acc=0.8495 | best_ep=2
+4257.6s 80 ├─ Fold 3/5 → F1=0.8577 | Acc=0.8598 | best_ep=3
+4757.4s 81 ├─ Fold 4/5 → F1=0.8499 | Acc=0.8559 | best_ep=2
+5258.2s 82 ├─ Fold 5/5 → F1=0.8462 | Acc=0.8493 | best_ep=2
+5258.2s 83 └─ SELESAI | F1-Macro: 0.8478 ± 0.0066
+5258.2s 84 Acc=0.8513 | Prec=0.8477 | Rec=0.8499
+5258.2s 85 Waktu: 43.3 menit | Sisa: 7j 15m (10 tersisa)
+5258.2s 86 ✔ Progress disimpan
+5258.2s 87 
+5258.2s 88 ─────────────────────────────────────────────────────────────────
+5258.2s 89 [03/12] lb=1e-05_lc=1e-03_bs=16
+5258.2s 90 ─────────────────────────────────────────────────────────────────
+5804.4s 91 ├─ Fold 1/5 → F1=0.8285 | Acc=0.8325 | best_ep=2
+6350.6s 92 ├─ Fold 2/5 → F1=0.8370 | Acc=0.8410 | best_ep=2
+6896.9s 93 ├─ Fold 3/5 → F1=0.8547 | Acc=0.8570 | best_ep=2
+7333.7s 94 ├─ Fold 4/5 → F1=0.8264 | Acc=0.8352 | best_ep=1
+7879.5s 95 ├─ Fold 5/5 → F1=0.8458 | Acc=0.8484 | best_ep=2
+7879.5s 96 └─ SELESAI | F1-Macro: 0.8385 ± 0.0106
+7879.5s 97 Acc=0.8428 | Prec=0.8408 | Rec=0.8405
+7879.5s 98 Waktu: 43.7 menit | Sisa: 6j 32m (9 tersisa)
+7879.5s 99 ✔ Progress disimpan
+7879.5s 100 
+7879.5s 101 ─────────────────────────────────────────────────────────────────
+7879.5s 102 [04/12] lb=1e-05_lc=1e-03_bs=32
+7879.5s 103 ─────────────────────────────────────────────────────────────────
+8379.6s 104 ├─ Fold 1/5 → F1=0.8390 | Acc=0.8401 | best_ep=2
+8879.6s 105 ├─ Fold 2/5 → F1=0.8577 | Acc=0.8598 | best_ep=2
+9480.2s 106 ├─ Fold 3/5 → F1=0.8542 | Acc=0.8561 | best_ep=3
+9880.8s 107 ├─ Fold 4/5 → F1=0.8306 | Acc=0.8380 | best_ep=1
+10381.3s 108 ├─ Fold 5/5 → F1=0.8398 | Acc=0.8418 | best_ep=2
+10381.3s 109 └─ SELESAI | F1-Macro: 0.8443 ± 0.0101
+10381.3s 110 Acc=0.8472 | Prec=0.8468 | Rec=0.8477
+10381.3s 111 Waktu: 41.7 menit | Sisa: 5j 45m (8 tersisa)
+10381.3s 112 ✔ Progress disimpan
+10381.3s 113 
+10381.3s 114 ─────────────────────────────────────────────────────────────────
+10381.3s 115 [05/12] lb=2e-05_lc=1e-04_bs=16
+10381.3s 116 ─────────────────────────────────────────────────────────────────
+10927.3s 117 ├─ Fold 1/5 → F1=0.8415 | Acc=0.8448 | best_ep=2
+11473.5s 118 ├─ Fold 2/5 → F1=0.8469 | Acc=0.8485 | best_ep=2
+11910.4s 119 ├─ Fold 3/5 → F1=0.8522 | Acc=0.8532 | best_ep=1
+12347.5s 120 ├─ Fold 4/5 → F1=0.8348 | Acc=0.8418 | best_ep=1
+12784.3s 121 ├─ Fold 5/5 → F1=0.8308 | Acc=0.8343 | best_ep=1
+12784.3s 122 └─ SELESAI | F1-Macro: 0.8412 ± 0.0078
+12784.3s 123 Acc=0.8445 | Prec=0.8435 | Rec=0.8448
+12784.3s 124 Waktu: 40.0 menit | Sisa: 4j 57m (7 tersisa)
+12784.3s 125 ✔ Progress disimpan
+12784.3s 126 
+12784.3s 127 ─────────────────────────────────────────────────────────────────
+12784.3s 128 [06/12] lb=2e-05_lc=1e-04_bs=32
+12784.3s 129 ─────────────────────────────────────────────────────────────────
+13283.4s 130 ├─ Fold 1/5 → F1=0.8378 | Acc=0.8373 | best_ep=2
+13783.5s 131 ├─ Fold 2/5 → F1=0.8505 | Acc=0.8532 | best_ep=2
+14183.8s 132 ├─ Fold 3/5 → F1=0.8432 | Acc=0.8457 | best_ep=1
+14684.1s 133 ├─ Fold 4/5 → F1=0.8392 | Acc=0.8446 | best_ep=2
+15284.5s 134 ├─ Fold 5/5 → F1=0.8498 | Acc=0.8540 | best_ep=3
+15284.5s 135 └─ SELESAI | F1-Macro: 0.8441 ± 0.0053
+15284.5s 136 Acc=0.8470 | Prec=0.8455 | Rec=0.8472
+15284.5s 137 Waktu: 41.7 menit | Sisa: 4j 14m (6 tersisa)
+15284.5s 138 ✔ Progress disimpan
+15284.5s 139 
+15284.5s 140 ─────────────────────────────────────────────────────────────────
+15284.5s 141 [07/12] lb=2e-05_lc=1e-03_bs=16
+15284.5s 142 ─────────────────────────────────────────────────────────────────
+15721.4s 143 ├─ Fold 1/5 → F1=0.8181 | Acc=0.8203 | best_ep=1
+16158.7s 144 ├─ Fold 2/5 → F1=0.8290 | Acc=0.8325 | best_ep=1
+16595.4s 145 ├─ Fold 3/5 → F1=0.8498 | Acc=0.8532 | best_ep=1
+17141.5s 146 ├─ Fold 4/5 → F1=0.8332 | Acc=0.8446 | best_ep=2
+17687.2s 147 ├─ Fold 5/5 → F1=0.8492 | Acc=0.8531 | best_ep=2
+17687.2s 148 └─ SELESAI | F1-Macro: 0.8359 ± 0.0122
+17687.2s 149 Acc=0.8407 | Prec=0.8401 | Rec=0.8378
+17687.2s 150 Waktu: 40.0 menit | Sisa: 3j 30m (5 tersisa)
+17687.2s 151 ✔ Progress disimpan
+17687.2s 152 
+17687.2s 153 ─────────────────────────────────────────────────────────────────
+17687.2s 154 [08/12] lb=2e-05_lc=1e-03_bs=32
+17687.2s 155 ─────────────────────────────────────────────────────────────────
+18187.2s 156 ├─ Fold 1/5 → F1=0.8277 | Acc=0.8288 | best_ep=2
+18686.4s 157 ├─ Fold 2/5 → F1=0.8508 | Acc=0.8532 | best_ep=2
+19087.1s 158 ├─ Fold 3/5 → F1=0.8607 | Acc=0.8627 | best_ep=1
+19588.0s 159 ├─ Fold 4/5 → F1=0.8433 | Acc=0.8475 | best_ep=2
+20088.2s 160 ├─ Fold 5/5 → F1=0.8385 | Acc=0.8399 | best_ep=2
+20088.2s 161 └─ SELESAI | F1-Macro: 0.8442 ± 0.0111
+20088.2s 162 Acc=0.8464 | Prec=0.8436 | Rec=0.8475
+20088.2s 163 Waktu: 40.0 menit | Sisa: 2j 47m (4 tersisa)
+20088.2s 164 ✔ Progress disimpan
+20088.2s 165 
+20088.2s 166 ─────────────────────────────────────────────────────────────────
+20088.2s 167 [09/12] lb=3e-05_lc=1e-04_bs=16
+20088.2s 168 ─────────────────────────────────────────────────────────────────
+20525.4s 169 ├─ Fold 1/5 → F1=0.8268 | Acc=0.8288 | best_ep=1
+20962.5s 170 ├─ Fold 2/5 → F1=0.8332 | Acc=0.8354 | best_ep=1
+21509.3s 171 ├─ Fold 3/5 → F1=0.8423 | Acc=0.8467 | best_ep=2
+22056.4s 172 ├─ Fold 4/5 → F1=0.8380 | Acc=0.8456 | best_ep=2
+22494.7s 173 ├─ Fold 5/5 → F1=0.8333 | Acc=0.8380 | best_ep=1
+22494.7s 174 └─ SELESAI | F1-Macro: 0.8347 ± 0.0052
+22494.7s 175 Acc=0.8389 | Prec=0.8358 | Rec=0.8371
+22494.7s 176 Waktu: 40.1 menit | Sisa: 2j 4m (3 tersisa)
+22494.7s 177 ✔ Progress disimpan
+22494.7s 178 
+22494.7s 179 ─────────────────────────────────────────────────────────────────
+22494.7s 180 [10/12] lb=3e-05_lc=1e-04_bs=32
+22494.7s 181 ─────────────────────────────────────────────────────────────────
+22895.1s 182 ├─ Fold 1/5 → F1=0.8356 | Acc=0.8373 | best_ep=1
+23396.0s 183 ├─ Fold 2/5 → F1=0.8426 | Acc=0.8438 | best_ep=2
+23896.7s 184 ├─ Fold 3/5 → F1=0.8568 | Acc=0.8598 | best_ep=2
+24396.5s 185 ├─ Fold 4/5 → F1=0.8436 | Acc=0.8475 | best_ep=2
+24896.8s 186 ├─ Fold 5/5 → F1=0.8274 | Acc=0.8333 | best_ep=2
+24896.8s 187 └─ SELESAI | F1-Macro: 0.8412 ± 0.0097
+24896.8s 188 Acc=0.8443 | Prec=0.8410 | Rec=0.8442
+24896.8s 189 Waktu: 40.0 menit | Sisa: 1j 22m (2 tersisa)
+24896.8s 190 ✔ Progress disimpan
+24896.8s 191 
+24896.8s 192 ─────────────────────────────────────────────────────────────────
+24896.8s 193 [11/12] lb=3e-05_lc=1e-03_bs=16
+24896.8s 194 ─────────────────────────────────────────────────────────────────
+25442.9s 195 ├─ Fold 1/5 → F1=0.8337 | Acc=0.8373 | best_ep=2
+25880.0s 196 ├─ Fold 2/5 → F1=0.8345 | Acc=0.8391 | best_ep=1
+26316.8s 197 ├─ Fold 3/5 → F1=0.8462 | Acc=0.8523 | best_ep=1
+26863.2s 198 ├─ Fold 4/5 → F1=0.8312 | Acc=0.8333 | best_ep=2
+27300.7s 199 ├─ Fold 5/5 → F1=0.7987 | Acc=0.8013 | best_ep=1
+27300.7s 200 └─ SELESAI | F1-Macro: 0.8289 ± 0.0159
+27300.7s 201 Acc=0.8327 | Prec=0.8329 | Rec=0.8312
+27300.7s 202 Waktu: 40.1 menit | Sisa: 0j 41m (1 tersisa)
+27300.7s 203 ✔ Progress disimpan
+27300.7s 204 
+27300.7s 205 ─────────────────────────────────────────────────────────────────
+27300.7s 206 [12/12] lb=3e-05_lc=1e-03_bs=32
+27300.7s 207 ─────────────────────────────────────────────────────────────────
+27700.5s 208 ├─ Fold 1/5 → F1=0.8321 | Acc=0.8354 | best_ep=1
+28100.5s 209 ├─ Fold 2/5 → F1=0.8443 | Acc=0.8457 | best_ep=1
+28600.0s 210 ├─ Fold 3/5 → F1=0.8600 | Acc=0.8627 | best_ep=2
+29000.3s 211 ├─ Fold 4/5 → F1=0.8323 | Acc=0.8343 | best_ep=1
+29400.6s 212 ├─ Fold 5/5 → F1=0.8337 | Acc=0.8362 | best_ep=1
+29400.6s 213 └─ SELESAI | F1-Macro: 0.8405 ± 0.0108
+29400.6s 214 Acc=0.8429 | Prec=0.8424 | Rec=0.8443
+29400.6s 215 Waktu: 35.0 menit | Sisa: 0j 0m (0 tersisa)
+29400.6s 216 ✔ Progress disimpan
+29400.6s 217 
+29400.6s 218 =================================================================
+29400.6s 219 PHASE 1 SELESAI — 8.2 jam
+29400.6s 220 =================================================================
+29400.6s 221 combo_id  lr_bert  lr_cnn  batch_size  weight_decay  f1_macro  f1_macro_std  f1_weighted  accuracy  precision  recall
+29400.6s 222 2  0.00001  0.0001          32          0.01    0.8478        0.0066       0.8514    0.8513     0.8477  0.8499
+29400.6s 223 4  0.00001  0.0010          32          0.01    0.8443        0.0101       0.8475    0.8472     0.8468  0.8477
+29400.6s 224 8  0.00002  0.0010          32          0.01    0.8442        0.0111       0.8471    0.8464     0.8436  0.8475
+29400.6s 225 6  0.00002  0.0001          32          0.01    0.8441        0.0053       0.8475    0.8470     0.8455  0.8472
+29400.6s 226 1  0.00001  0.0001          16          0.01    0.8435        0.0055       0.8469    0.8466     0.8445  0.8466
+29400.6s 227 5  0.00002  0.0001          16          0.01    0.8412        0.0078       0.8447    0.8445     0.8435  0.8448
+29400.6s 228 10  0.00003  0.0001          32          0.01    0.8412        0.0097       0.8450    0.8443     0.8410  0.8442
+29400.6s 229 12  0.00003  0.0010          32          0.01    0.8405        0.0108       0.8437    0.8429     0.8424  0.8443
+29400.6s 230 3  0.00001  0.0010          16          0.01    0.8385        0.0106       0.8422    0.8428     0.8408  0.8405
+29400.6s 231 7  0.00002  0.0010          16          0.01    0.8359        0.0122       0.8400    0.8407     0.8401  0.8378
+29400.6s 232 9  0.00003  0.0001          16          0.01    0.8347        0.0052       0.8387    0.8389     0.8358  0.8371
+29400.6s 233 11  0.00003  0.0010          16          0.01    0.8289        0.0159       0.8323    0.8327     0.8329  0.8312
+29400.6s 234 
+29400.6s 235 Config Terbaik:
+29400.6s 236 lr_bert=1e-05 | lr_cnn=0.0001 | bs=32
+29400.6s 237 F1-Macro: 0.8478 ± 0.0066
+29400.6s 238 
+29400.6s 239 ⚠️  Update BEST_LR_BERT, BEST_LR_CNN, BEST_BS di sel Konfigurasi sebelum Phase 2A!
+29402.6s 240 ✔ Learning curve: phase1_learning_curves_best.png
+29402.8s 241 ✔ Stabilitas K-Fold: phase1_kfold_stability.png
+29402.8s 242 ✔ Semua visualisasi Phase 1 tersimpan.
+29409.4s 243 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+29409.4s 244 cells[i][c] = re.sub('\\\\\|', '|', cell)
+29409.5s 245 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+29409.5s 246 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+29410.1s 247 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+29410.8s 248 [NbConvertApp] Writing 1746293 bytes to __notebook__.ipynb
+29413.2s 249 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+29414.4s 250 [NbConvertApp] Support files will be in __results___files/
+29414.4s 251 [NbConvertApp] Making directory __results___files
+29414.4s 252 [NbConvertApp] Making directory __results___files
+29414.4s 253 [NbConvertApp] Writing 1722873 bytes to __results__.html
