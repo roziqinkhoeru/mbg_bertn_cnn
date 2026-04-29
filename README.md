@@ -1,4 +1,4 @@
-The Last Project: Analysis of Public Opinion Sentiment on Social Media Platform X Regarding the Free Nutritious Meal Program Using BERT-CNN and LDA
+The Last Project: Analysis of Public Opinion Sentiment on Social Media Platform X Regarding the Free Nutritious Meal Program Using BERT-CNN
 
 Crawling Twitter (Tweet Harvest v. 2.7.1)
 keyword_1 = "makan bergizi gratis"
@@ -31,4 +31,9 @@ data 3: refill batch val (20)
 # FINAL DATA
 
 data: 6.646
-source: "dataset/final/final_validated_mbg.csv"
+source: "dataset/final/raw_sampling_mbg.csv"
+
+# LABELING & VALIDATE
+
+data: 6.640
+source: "dataset/final/final_mbg_labeled.csv"
