@@ -1,0 +1,228 @@
+;9.6s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+9.6s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+9.6s 3 0.00s - to python to disable frozen modules.
+9.6s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+10.4s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+10.4s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+10.4s 7 0.00s - to python to disable frozen modules.
+10.4s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+11.9s 9 Environment: Kaggle Notebook
+11.9s 10 ✅ Setup Kaggle selesai. (CPU — tidak perlu GPU untuk ML baseline)
+16.5s 11 scikit-learn tersedia.
+16.5s 12 sklearn version: 1.6.1
+16.6s 13 Restoring files dari mbg-training-outputs...
+16.6s 14 ✔ test_set_indices.npy
+16.6s 15 ✔ test_set_fixed.csv
+16.6s 16 Done.
+16.6s 17 ✅ Konfigurasi berhasil dimuat.
+16.6s 18 Kondisi data : S1 (class_weight=balanced, identik S1 notebook 03)
+16.6s 19 TF-IDF       : max_features=50,000, ngram=(1, 2), sublinear_tf=True
+16.6s 20 Model        : ['SVM', 'LogisticRegression', 'RandomForest']
+16.6s 21 K-Fold       : 5
+16.6s 22
+16.6s 23 Note: Notebook ini tidak membutuhkan GPU.
+16.7s 24 Memuat data berlabel...
+16.7s 25 Total data berlabel: 6,642
+16.7s 26 positive    : 2,625 (39.5%)
+16.7s 27 negative    : 2,085 (31.4%)
+16.7s 28 neutral     : 1,932 (29.1%)
+16.7s 29
+16.7s 30 Test set index dimuat dari notebook 03 (identik).
+16.7s 31 Train+Val : 5,313 | Test (FIXED): 1,329
+16.7s 32
+16.7s 33 Distribusi test set:
+16.7s 34 positive    : 525 (39.5%)
+16.7s 35 negative    : 417 (31.4%)
+16.7s 36 neutral     : 387 (29.1%)
+16.8s 37 ✅ Utilities berhasil didefinisikan.
+16.8s 38 TF-IDF difit hanya pada train fold — tidak ada data leakage.
+16.9s 39
+16.9s 40 ════════════════════════════════════════════════════════════
+16.9s 41 MODEL: SVM
+16.9s 42 Deskripsi: Linear SVM (C=1.0, class_weight=balanced)
+16.9s 43 ════════════════════════════════════════════════════════════
+16.9s 44
+16.9s 45 K-Fold 5 pada 5,313 train+val data...
+17.6s 46 ├─ Fold 1/5 → F1=0.8147 | Acc=0.8184 | fit=0.1s
+18.1s 47 ├─ Fold 2/5 → F1=0.8083 | Acc=0.8128 | fit=0.1s
+18.6s 48 ├─ Fold 3/5 → F1=0.8094 | Acc=0.8137 | fit=0.1s
+19.1s 49 ├─ Fold 4/5 → F1=0.7925 | Acc=0.7976 | fit=0.1s
+19.6s 50 ├─ Fold 5/5 → F1=0.7868 | Acc=0.7919 | fit=0.1s
+19.6s 51 └─ K-Fold selesai — 0.0 menit
+19.6s 52 F1-Macro: 0.8023 ± 0.0107
+19.6s 53
+19.6s 54 Final training pada seluruh 5,313 train+val...
+20.2s 55
+20.2s 56 ───────────────────────────────────────────────────────
+20.2s 57 EVALUASI FINAL — TEST SET (SVM)
+20.2s 58 ───────────────────────────────────────────────────────
+20.2s 59 accuracy       : 0.8322
+20.2s 60 precision      : 0.8280
+20.2s 61 recall         : 0.8269
+20.2s 62 f1_macro       : 0.8267
+20.2s 63 f1_weighted    : 0.8313
+20.2s 64
+20.2s 65 precision    recall  f1-score   support
+20.2s 66
+20.2s 67 positive       0.87      0.87      0.87       525
+20.2s 68 negative       0.82      0.88      0.85       417
+20.2s 69 neutral       0.80      0.74      0.77       387
+20.2s 70
+20.2s 71 accuracy                           0.83      1329
+20.2s 72 macro avg       0.83      0.83      0.83      1329
+20.2s 73 weighted avg       0.83      0.83      0.83      1329
+20.2s 74
+20.2s 75 Per-class F1: positive=0.8658 | negative=0.8482 | neutral=0.7661
+21.0s 76 ✔ Confusion matrix disimpan.
+21.0s 77 ✔ svm_test_predictions.csv (1,329 baris)
+21.4s 78 ✔ Model & TF-IDF disimpan (.pkl)
+21.4s 79
+21.4s 80 ════════════════════════════════════════════════════════════
+21.4s 81 MODEL: LogisticRegression
+21.4s 82 Deskripsi: Logistic Regression (C=1.0, OvR, L2, class_weight=balanced)
+21.4s 83 ════════════════════════════════════════════════════════════
+21.4s 84
+21.4s 85 K-Fold 5 pada 5,313 train+val data...
+22.0s 86 ├─ Fold 1/5 → F1=0.8107 | Acc=0.8137 | fit=0.2s
+22.6s 87 ├─ Fold 2/5 → F1=0.8061 | Acc=0.8100 | fit=0.2s
+23.3s 88 ├─ Fold 3/5 → F1=0.8143 | Acc=0.8175 | fit=0.2s
+23.9s 89 ├─ Fold 4/5 → F1=0.8012 | Acc=0.8041 | fit=0.2s
+24.4s 90 ├─ Fold 5/5 → F1=0.7821 | Acc=0.7872 | fit=0.2s
+24.4s 91 └─ K-Fold selesai — 0.1 menit
+24.4s 92 F1-Macro: 0.8029 ± 0.0113
+24.4s 93
+24.4s 94 Final training pada seluruh 5,313 train+val...
+25.2s 95
+25.2s 96 ───────────────────────────────────────────────────────
+25.2s 97 EVALUASI FINAL — TEST SET (LogisticRegression)
+25.2s 98 ───────────────────────────────────────────────────────
+25.2s 99 accuracy       : 0.8284
+25.2s 100 precision      : 0.8251
+25.2s 101 recall         : 0.8284
+25.2s 102 f1_macro       : 0.8251
+25.2s 103 f1_weighted    : 0.8287
+25.2s 104
+25.2s 105 precision    recall  f1-score   support
+25.2s 106
+25.2s 107 positive       0.90      0.82      0.86       525
+25.2s 108 negative       0.80      0.89      0.84       417
+25.2s 109 neutral       0.78      0.78      0.78       387
+25.2s 110
+25.2s 111 accuracy                           0.83      1329
+25.2s 112 macro avg       0.83      0.83      0.83      1329
+25.2s 113 weighted avg       0.83      0.83      0.83      1329
+25.2s 114
+25.2s 115 Per-class F1: positive=0.8560 | negative=0.8416 | neutral=0.7778
+25.9s 116 ✔ Confusion matrix disimpan.
+25.9s 117 ✔ logisticregression_test_predictions.csv (1,329 baris)
+26.2s 118 ✔ Model & TF-IDF disimpan (.pkl)
+26.2s 119
+26.2s 120 ════════════════════════════════════════════════════════════
+26.2s 121 MODEL: RandomForest
+26.2s 122 Deskripsi: Random Forest (n=200, class_weight=balanced)
+26.2s 123 ════════════════════════════════════════════════════════════
+26.2s 124
+26.2s 125 K-Fold 5 pada 5,313 train+val data...
+33.7s 126 ├─ Fold 1/5 → F1=0.7824 | Acc=0.7865 | fit=7.0s
+41.7s 127 ├─ Fold 2/5 → F1=0.7662 | Acc=0.7723 | fit=7.3s
+49.6s 128 ├─ Fold 3/5 → F1=0.7855 | Acc=0.7902 | fit=7.3s
+57.3s 129 ├─ Fold 4/5 → F1=0.7558 | Acc=0.7608 | fit=7.2s
+65.1s 130 ├─ Fold 5/5 → F1=0.7629 | Acc=0.7693 | fit=7.2s
+65.1s 131 └─ K-Fold selesai — 0.6 menit
+65.1s 132 F1-Macro: 0.7706 ± 0.0115
+65.1s 133
+65.1s 134 Final training pada seluruh 5,313 train+val...
+75.9s 135
+75.9s 136 ───────────────────────────────────────────────────────
+75.9s 137 EVALUASI FINAL — TEST SET (RandomForest)
+75.9s 138 ───────────────────────────────────────────────────────
+75.9s 139 accuracy       : 0.8006
+75.9s 140 precision      : 0.7975
+75.9s 141 recall         : 0.7995
+75.9s 142 f1_macro       : 0.7966
+75.9s 143 f1_weighted    : 0.8005
+75.9s 144
+75.9s 145 precision    recall  f1-score   support
+75.9s 146
+75.9s 147 positive       0.87      0.79      0.83       525
+75.9s 148 negative       0.76      0.87      0.81       417
+75.9s 149 neutral       0.76      0.73      0.75       387
+75.9s 150
+75.9s 151 accuracy                           0.80      1329
+75.9s 152 macro avg       0.80      0.80      0.80      1329
+75.9s 153 weighted avg       0.80      0.80      0.80      1329
+75.9s 154
+75.9s 155 Per-class F1: positive=0.8299 | negative=0.8143 | neutral=0.7457
+76.6s 156 ✔ Confusion matrix disimpan.
+76.6s 157 ✔ randomforest_test_predictions.csv (1,329 baris)
+76.8s 158 ✔ Model & TF-IDF disimpan (.pkl)
+76.8s 159
+76.8s 160 ════════════════════════════════════════════════════════════
+76.8s 161 SEMUA MODEL SELESAI — 1.0 menit total
+76.8s 162 ════════════════════════════════════════════════════════════
+76.8s 163 model  test_f1_macro  test_accuracy  kfold_f1_macro_mean  kfold_f1_macro_std
+76.8s 164 SVM         0.8267         0.8322               0.8023              0.0107
+76.8s 165 LogisticRegression         0.8251         0.8284               0.8029              0.0113
+76.8s 166 RandomForest         0.7966         0.8006               0.7706              0.0115
+78.1s 167 ✔ Semua visualisasi ML baseline tersimpan.
+78.1s 168 ═════════════════════════════════════════════════════════════════
+78.1s 169 RINGKASAN ML BASELINE — TEST SET
+78.1s 170 ═════════════════════════════════════════════════════════════════
+78.1s 171 Model                    F1-Macro     F1-Wgt   Accuracy
+78.1s 172 ─────────────────────────────────────────────────────────────────
+78.1s 173 SVM                        0.8267     0.8313     0.8322
+78.1s 174 LogisticRegression         0.8251     0.8287     0.8284
+78.1s 175 RandomForest               0.7966     0.8005     0.8006
+78.1s 176 ─────────────────────────────────────────────────────────────────
+78.1s 177 Best ML: SVM (F1-Macro=0.8267)
+78.1s 178 ═════════════════════════════════════════════════════════════════
+78.1s 179
+78.1s 180 Per-class F1 (test set):
+78.1s 181 Model                    Positive   Negative    Neutral
+78.1s 182 ───────────────────────────────────────────────────────
+78.1s 183 SVM                        0.8658     0.8482     0.7661
+78.1s 184 LogisticRegression         0.8560     0.8416     0.7778
+78.1s 185 RandomForest               0.8299     0.8143     0.7457
+78.1s 186
+78.1s 187 ═════════════════════════════════════════════════════════════════
+78.1s 188 PERBANDINGAN AWAL — ML vs DL
+78.1s 189 ═════════════════════════════════════════════════════════════════
+78.1s 190 IndoBERT+CNN (proposed) : 0.8453
+78.1s 191 IndoBERT-only (baseline): 0.8497
+78.1s 192 SVM                      : 0.8267 (proposed lebih baik +0.0186)
+78.1s 193 LogisticRegression       : 0.8251 (proposed lebih baik +0.0202)
+78.1s 194 RandomForest             : 0.7966 (proposed lebih baik +0.0487)
+78.1s 195 ═════════════════════════════════════════════════════════════════
+78.1s 196
+78.1s 197 Output yang dihasilkan:
+78.1s 198 ✔ ml_baseline_summary.csv                            Ringkasan metrik semua model untuk nb06
+78.1s 199 ✔ ml_baseline_fold_details.csv                       Detail metrik per fold semua model
+78.1s 200 ✔ ml_comparison_metrics.png                          Grouped bar chart perbandingan metrik
+78.1s 201 ✔ ml_kfold_stability.png                             Box plot stabilitas K-Fold
+78.1s 202 ✔ ml_perclass_f1.png                                 Per-class F1 per model
+78.1s 203 ✔ svm_cm_pair.png                                    Confusion matrix SVM
+78.1s 204 ✔ logisticregression_cm_pair.png                     Confusion matrix LR
+78.1s 205 ✔ randomforest_cm_pair.png                           Confusion matrix RF
+78.1s 206 ✔ svm_test_predictions.csv                           Prediksi SVM per tweet
+78.1s 207 ✔ logisticregression_test_predictions.csv            Prediksi LR per tweet
+78.1s 208 ✔ randomforest_test_predictions.csv                  Prediksi RF per tweet
+78.1s 209 ✔ svm_model.pkl                                      Model SVM final
+78.1s 210 ✔ svm_tfidf.pkl                                      TF-IDF SVM final
+78.1s 211 ✔ logisticregression_model.pkl                       Model LR final
+78.1s 212 ✔ logisticregression_tfidf.pkl                       TF-IDF LR final
+78.1s 213 ✔ randomforest_model.pkl                             Model RF final
+78.1s 214 ✔ randomforest_tfidf.pkl                             TF-IDF RF final
+78.1s 215
+78.1s 216 Lanjut ke Notebook 06 — Model Comparison
+82.0s 217 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+82.0s 218 cells[i][c] = re.sub('\\\\\|', '|', cell)
+82.2s 219 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+82.2s 220 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+83.0s 221 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+83.5s 222 [NbConvertApp] Writing 156735 bytes to __notebook__.ipynb
+86.9s 223 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+88.1s 224 [NbConvertApp] Support files will be in __results___files/
+88.1s 225 [NbConvertApp] Making directory __results___files
+88.1s 226 [NbConvertApp] Making directory __results___files
+88.1s 227 [NbConvertApp] Making directory __results___files
+88.1s 228 [NbConvertApp] Writing 409906 bytes to __results__.html
