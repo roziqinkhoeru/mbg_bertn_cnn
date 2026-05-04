@@ -1,3 +1,6 @@
 /dataset/raw
 /dataset/merge
+/extended/saved_models
+
 *.pt
+*.pkl
