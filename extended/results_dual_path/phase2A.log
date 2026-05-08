@@ -1,0 +1,442 @@
+7.6s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+7.6s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+7.6s 3 0.00s - to python to disable frozen modules.
+7.6s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+8.2s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+8.2s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+8.2s 7 0.00s - to python to disable frozen modules.
+8.2s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+9.3s 9 Environment: Kaggle Notebook
+14.8s 10 ✅ GPU OK: Tesla T4 | sm_75
+14.8s 11 ✅ Setup Kaggle selesai.
+34.3s 12 Device  : cuda
+34.3s 13 GPU     : Tesla T4
+34.3s 14 VRAM    : 15.6 GB
+34.3s 15 Compute : sm_75
+34.3s 16 PyTorch : 2.10.0+cu128
+34.4s 17 Restoring files...
+34.4s 18 ✔ test_set_indices.npy
+34.4s 19 ✔ test_set_fixed.csv
+34.4s 20 ✔ phase1_results.csv
+34.4s 21 ✔ phase1_epoch_history.csv
+34.4s 22 ✔ phase1_fold_details.csv
+34.4s 23 ✔ phase1_summary_top10.csv
+34.4s 24 
+34.4s 25 Verifikasi:
+34.4s 26 ✔ test_set_indices.npy                          10.5 KB | 2026-05-08 09:40 | 1329 indices
+34.4s 27 ✔ test_set_fixed.csv                            621.1 KB | 2026-05-08 09:40 | 1329 baris
+34.4s 28 ✔ phase1_results.csv                            1.5 KB | 2026-05-08 09:40 | 12 baris
+34.4s 29 ✔ phase1_epoch_history.csv                      24.0 KB | 2026-05-08 09:40 | 280 baris
+34.4s 30 ✔ phase1_fold_details.csv                       4.5 KB | 2026-05-08 09:40 | 60 baris
+34.4s 31 ✔ phase1_summary_top10.csv                      0.7 KB | 2026-05-08 09:40 | 10 baris
+34.4s 32 Restoring process done!
+34.4s 33 ✅ Konfigurasi berhasil dimuat.
+34.4s 34 Arsitektur : Dual-Path [CLS]+CNN → Concat → Dense(256) → Dense(3)
+34.4s 35 Phase 1    : 12 kombinasi × 5 fold = 60 runs (~9–10 jam)
+34.4s 36 Phase 2A   : 12 kombinasi × 5 fold = 60 runs (~9 jam)
+34.4s 37 Phase 2B   : 12 kombinasi × 5 fold = 60 runs (~9 jam)
+34.4s 38 Phase 3    : 2 kondisi × 5 fold = 10 runs + evaluasi final
+34.5s 39 Memuat data berlabel...
+34.5s 40 Total data berlabel: 6,642
+34.5s 41 positive    : 2,625 (39.5%)
+34.5s 42 negative    : 2,085 (31.4%)
+34.5s 43 neutral     : 1,932 (29.1%)
+34.5s 44 
+34.5s 45 Test set index dimuat dari file existing.
+34.5s 46 Train+Val : 5,313 | Test (FIXED): 1,329
+34.5s 47 Distribusi test set:
+34.5s 48 positive    : 525 (39.5%)
+34.5s 49 negative    : 417 (31.4%)
+34.5s 50 neutral     : 387 (29.1%)
+34.6s 51 Memuat tokenizer: indobenchmark/indobert-base-p2...
+35.2s 52 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+35.2s 53 
+35.2s 54 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+35.7s 55 ✅ Tokenizer berhasil dimuat.
+35.7s 56 Validasi arsitektur Dual-Path...
+42.8s 57 ✅ Output shape  : [2, 3] (expected [2, 3])
+42.8s 58 ✅ [CLS] dim     : 768
+42.8s 59 ✅ CNN dim       : 384 (128×3 kernels)
+42.8s 60 ✅ Combined dim  : 1152 → Dense(256) → Dense(3)
+42.8s 61 
+42.8s 62 ✅ Arsitektur Dual-Path [CLS]+CNN berhasil didefinisikan.
+42.9s 63 ✅ Training utilities berhasil didefinisikan.
+42.9s 64 Optimizer  : AdamW differential LR + weight decay exclusion (4 param groups)
+42.9s 65 Arsitektur : Dual-Path [CLS]+CNN → Concatenate → Dense → Classifier
+42.9s 66 Recording  : epoch_history (semua kombinasi) + fold_details
+43.0s 67 Phase 2A: 12 kombinasi × 5 fold = 60 runs
+43.0s 68 BERT fixed: lr_bert=1e-05 | lr_cnn=0.0001 | bs=32 | wd=0.01
+43.0s 69 [01] ngram=[1, 2, 3] | filter=128 | dropout=0.3 | act=relu
+43.0s 70 [02] ngram=[1, 2, 3] | filter=128 | dropout=0.3 | act=gelu
+43.0s 71 [03] ngram=[1, 2, 3] | filter=128 | dropout=0.3 | act=elu
+43.0s 72 [04] ngram=[1, 2, 3] | filter=128 | dropout=0.5 | act=relu
+43.0s 73 [05] ngram=[1, 2, 3] | filter=128 | dropout=0.5 | act=gelu
+43.0s 74 [06] ngram=[1, 2, 3] | filter=128 | dropout=0.5 | act=elu
+43.0s 75 [07] ngram=[1, 2, 3] | filter=256 | dropout=0.3 | act=relu
+43.0s 76 [08] ngram=[1, 2, 3] | filter=256 | dropout=0.3 | act=gelu
+43.0s 77 [09] ngram=[1, 2, 3] | filter=256 | dropout=0.3 | act=elu
+43.0s 78 [10] ngram=[1, 2, 3] | filter=256 | dropout=0.5 | act=relu
+43.0s 79 [11] ngram=[1, 2, 3] | filter=256 | dropout=0.5 | act=gelu
+43.0s 80 [12] ngram=[1, 2, 3] | filter=256 | dropout=0.5 | act=elu
+43.1s 81 
+43.1s 82 ─────────────────────────────────────────────────────────────────
+43.1s 83 [01/12] ng=[1, 2, 3]_f=128_dr=0.3_relu
+43.1s 84 ─────────────────────────────────────────────────────────────────
+526.0s 85 ├─ Fold 1/5 → F1=0.8508 | Acc=0.8523 | best_ep=2
+1013.0s 86 ├─ Fold 2/5 → F1=0.8535 | Acc=0.8570 | best_ep=2
+1597.0s 87 ├─ Fold 3/5 → F1=0.8553 | Acc=0.8579 | best_ep=3
+2084.1s 88 ├─ Fold 4/5 → F1=0.8287 | Acc=0.8333 | best_ep=2
+2571.0s 89 ├─ Fold 5/5 → F1=0.8373 | Acc=0.8418 | best_ep=2
+2571.0s 90 └─ SELESAI | F1-Macro: 0.8451 ± 0.0104
+2571.0s 91 Acc=0.8485 | Prec=0.8451 | Rec=0.8477
+2571.0s 92 Waktu: 42.1 menit | Sisa: 7j 43m (11 tersisa)
+2571.0s 93 ✔ Progress disimpan
+2571.0s 94 
+2571.0s 95 ─────────────────────────────────────────────────────────────────
+2571.0s 96 [02/12] ng=[1, 2, 3]_f=128_dr=0.3_gelu
+2571.0s 97 ─────────────────────────────────────────────────────────────────
+3156.2s 98 ├─ Fold 1/5 → F1=0.8502 | Acc=0.8514 | best_ep=3
+3643.8s 99 ├─ Fold 2/5 → F1=0.8534 | Acc=0.8561 | best_ep=2
+4228.9s 100 ├─ Fold 3/5 → F1=0.8509 | Acc=0.8542 | best_ep=3
+4716.8s 101 ├─ Fold 4/5 → F1=0.8248 | Acc=0.8267 | best_ep=2
+5204.6s 102 ├─ Fold 5/5 → F1=0.8489 | Acc=0.8522 | best_ep=2
+5204.6s 103 └─ SELESAI | F1-Macro: 0.8456 ± 0.0105
+5204.6s 104 Acc=0.8481 | Prec=0.8460 | Rec=0.8489
+5204.6s 105 Waktu: 43.9 menit | Sisa: 7j 10m (10 tersisa)
+5204.6s 106 ✔ Progress disimpan
+5204.6s 107 
+5204.6s 108 ─────────────────────────────────────────────────────────────────
+5204.6s 109 [03/12] ng=[1, 2, 3]_f=128_dr=0.3_elu
+5204.6s 110 ─────────────────────────────────────────────────────────────────
+5691.7s 111 ├─ Fold 1/5 → F1=0.8498 | Acc=0.8504 | best_ep=2
+6178.5s 112 ├─ Fold 2/5 → F1=0.8527 | Acc=0.8532 | best_ep=2
+6665.5s 113 ├─ Fold 3/5 → F1=0.8604 | Acc=0.8627 | best_ep=2
+7150.1s 114 ├─ Fold 4/5 → F1=0.8207 | Acc=0.8249 | best_ep=2
+7626.2s 115 ├─ Fold 5/5 → F1=0.8132 | Acc=0.8173 | best_ep=2
+7626.2s 116 └─ SELESAI | F1-Macro: 0.8394 ± 0.0188
+7626.2s 117 Acc=0.8417 | Prec=0.8419 | Rec=0.8429
+7626.2s 118 Waktu: 40.4 menit | Sisa: 6j 19m (9 tersisa)
+7626.2s 119 ✔ Progress disimpan
+7626.2s 120 
+7626.2s 121 ─────────────────────────────────────────────────────────────────
+7626.2s 122 [04/12] ng=[1, 2, 3]_f=128_dr=0.5_relu
+7626.2s 123 ─────────────────────────────────────────────────────────────────
+8195.2s 124 ├─ Fold 1/5 → F1=0.8421 | Acc=0.8438 | best_ep=3
+8762.3s 125 ├─ Fold 2/5 → F1=0.8669 | Acc=0.8702 | best_ep=3
+9235.1s 126 ├─ Fold 3/5 → F1=0.8677 | Acc=0.8702 | best_ep=2
+9708.6s 127 ├─ Fold 4/5 → F1=0.8265 | Acc=0.8315 | best_ep=2
+10182.7s 128 ├─ Fold 5/5 → F1=0.8316 | Acc=0.8333 | best_ep=2
+10182.7s 129 └─ SELESAI | F1-Macro: 0.8470 ± 0.0174
+10182.7s 130 Acc=0.8498 | Prec=0.8482 | Rec=0.8502
+10182.7s 131 Waktu: 42.6 menit | Sisa: 5j 37m (8 tersisa)
+10182.7s 132 ✔ Progress disimpan
+10182.7s 133 
+10182.7s 134 ─────────────────────────────────────────────────────────────────
+10182.7s 135 [05/12] ng=[1, 2, 3]_f=128_dr=0.5_gelu
+10182.7s 136 ─────────────────────────────────────────────────────────────────
+10656.9s 137 ├─ Fold 1/5 → F1=0.8460 | Acc=0.8504 | best_ep=2
+11131.4s 138 ├─ Fold 2/5 → F1=0.8595 | Acc=0.8627 | best_ep=2
+11605.1s 139 ├─ Fold 3/5 → F1=0.8654 | Acc=0.8683 | best_ep=2
+12079.4s 140 ├─ Fold 4/5 → F1=0.8259 | Acc=0.8296 | best_ep=2
+12555.3s 141 ├─ Fold 5/5 → F1=0.8355 | Acc=0.8399 | best_ep=2
+12555.3s 142 └─ SELESAI | F1-Macro: 0.8465 ± 0.0146
+12555.3s 143 Acc=0.8502 | Prec=0.8459 | Rec=0.8488
+12555.3s 144 Waktu: 39.5 menit | Sisa: 4j 51m (7 tersisa)
+12555.3s 145 ✔ Progress disimpan
+12555.3s 146 
+12555.3s 147 ─────────────────────────────────────────────────────────────────
+12555.3s 148 [06/12] ng=[1, 2, 3]_f=128_dr=0.5_elu
+12555.3s 149 ─────────────────────────────────────────────────────────────────
+13040.9s 150 ├─ Fold 1/5 → F1=0.8342 | Acc=0.8354 | best_ep=2
+13623.3s 151 ├─ Fold 2/5 → F1=0.8604 | Acc=0.8627 | best_ep=3
+14108.0s 152 ├─ Fold 3/5 → F1=0.8642 | Acc=0.8674 | best_ep=2
+14593.9s 153 ├─ Fold 4/5 → F1=0.8233 | Acc=0.8267 | best_ep=2
+15078.9s 154 ├─ Fold 5/5 → F1=0.8427 | Acc=0.8456 | best_ep=2
+15078.9s 155 └─ SELESAI | F1-Macro: 0.8450 ± 0.0155
+15078.9s 156 Acc=0.8476 | Prec=0.8457 | Rec=0.8475
+15078.9s 157 Waktu: 42.1 menit | Sisa: 4j 10m (6 tersisa)
+15078.9s 158 ✔ Progress disimpan
+15078.9s 159 
+15078.9s 160 ─────────────────────────────────────────────────────────────────
+15078.9s 161 [07/12] ng=[1, 2, 3]_f=256_dr=0.3_relu
+15078.9s 162 ─────────────────────────────────────────────────────────────────
+15569.9s 163 ├─ Fold 1/5 → F1=0.8466 | Acc=0.8495 | best_ep=2
+16060.7s 164 ├─ Fold 2/5 → F1=0.8540 | Acc=0.8561 | best_ep=2
+16551.8s 165 ├─ Fold 3/5 → F1=0.8492 | Acc=0.8561 | best_ep=2
+17042.8s 166 ├─ Fold 4/5 → F1=0.8265 | Acc=0.8277 | best_ep=2
+17435.9s 167 ├─ Fold 5/5 → F1=0.8339 | Acc=0.8371 | best_ep=1
+17435.9s 168 └─ SELESAI | F1-Macro: 0.8420 ± 0.0102
+17435.9s 169 Acc=0.8453 | Prec=0.8432 | Rec=0.8456
+17435.9s 170 Waktu: 39.3 menit | Sisa: 3j 27m (5 tersisa)
+17435.9s 171 ✔ Progress disimpan
+17435.9s 172 
+17435.9s 173 ─────────────────────────────────────────────────────────────────
+17435.9s 174 [08/12] ng=[1, 2, 3]_f=256_dr=0.3_gelu
+17435.9s 175 ─────────────────────────────────────────────────────────────────
+18024.4s 176 ├─ Fold 1/5 → F1=0.8536 | Acc=0.8570 | best_ep=3
+18515.9s 177 ├─ Fold 2/5 → F1=0.8578 | Acc=0.8608 | best_ep=2
+19006.9s 178 ├─ Fold 3/5 → F1=0.8529 | Acc=0.8570 | best_ep=2
+19400.1s 179 ├─ Fold 4/5 → F1=0.8224 | Acc=0.8267 | best_ep=1
+19891.3s 180 ├─ Fold 5/5 → F1=0.8275 | Acc=0.8315 | best_ep=2
+19891.3s 181 └─ SELESAI | F1-Macro: 0.8428 ± 0.0148
+19891.3s 182 Acc=0.8466 | Prec=0.8429 | Rec=0.8447
+19891.3s 183 Waktu: 40.9 menit | Sisa: 2j 45m (4 tersisa)
+19891.3s 184 ✔ Progress disimpan
+19891.3s 185 
+19891.3s 186 ─────────────────────────────────────────────────────────────────
+19891.3s 187 [09/12] ng=[1, 2, 3]_f=256_dr=0.3_elu
+19891.3s 188 ─────────────────────────────────────────────────────────────────
+20381.4s 189 ├─ Fold 1/5 → F1=0.8518 | Acc=0.8523 | best_ep=2
+20970.4s 190 ├─ Fold 2/5 → F1=0.8601 | Acc=0.8627 | best_ep=3
+21559.9s 191 ├─ Fold 3/5 → F1=0.8548 | Acc=0.8589 | best_ep=3
+21953.6s 192 ├─ Fold 4/5 → F1=0.8252 | Acc=0.8267 | best_ep=1
+22445.6s 193 ├─ Fold 5/5 → F1=0.8317 | Acc=0.8352 | best_ep=2
+22445.6s 194 └─ SELESAI | F1-Macro: 0.8447 ± 0.0137
+22445.6s 195 Acc=0.8472 | Prec=0.8451 | Rec=0.8481
+22445.6s 196 Waktu: 42.6 menit | Sisa: 2j 4m (3 tersisa)
+22445.6s 197 ✔ Progress disimpan
+22445.6s 198 
+22445.6s 199 ─────────────────────────────────────────────────────────────────
+22445.6s 200 [10/12] ng=[1, 2, 3]_f=256_dr=0.5_relu
+22445.6s 201 ─────────────────────────────────────────────────────────────────
+23132.5s 202 ├─ Fold 1/5 → F1=0.8517 | Acc=0.8542 | best_ep=4
+23721.1s 203 ├─ Fold 2/5 → F1=0.8558 | Acc=0.8598 | best_ep=3
+24309.3s 204 ├─ Fold 3/5 → F1=0.8649 | Acc=0.8664 | best_ep=3
+24799.1s 205 ├─ Fold 4/5 → F1=0.8305 | Acc=0.8343 | best_ep=2
+25289.4s 206 ├─ Fold 5/5 → F1=0.8410 | Acc=0.8427 | best_ep=2
+25289.4s 207 └─ SELESAI | F1-Macro: 0.8488 ± 0.0119
+25289.4s 208 Acc=0.8515 | Prec=0.8494 | Rec=0.8523
+25289.4s 209 Waktu: 47.4 menit | Sisa: 1j 24m (2 tersisa)
+25289.4s 210 ✔ Progress disimpan
+25289.4s 211 
+25289.4s 212 ─────────────────────────────────────────────────────────────────
+25289.4s 213 [11/12] ng=[1, 2, 3]_f=256_dr=0.5_gelu
+25289.4s 214 ─────────────────────────────────────────────────────────────────
+25779.6s 215 ├─ Fold 1/5 → F1=0.8486 | Acc=0.8514 | best_ep=2
+26269.7s 216 ├─ Fold 2/5 → F1=0.8566 | Acc=0.8589 | best_ep=2
+26857.8s 217 ├─ Fold 3/5 → F1=0.8652 | Acc=0.8674 | best_ep=3
+27348.9s 218 ├─ Fold 4/5 → F1=0.8292 | Acc=0.8324 | best_ep=2
+27839.8s 219 ├─ Fold 5/5 → F1=0.8315 | Acc=0.8352 | best_ep=2
+27839.8s 220 └─ SELESAI | F1-Macro: 0.8462 ± 0.0140
+27839.8s 221 Acc=0.8491 | Prec=0.8458 | Rec=0.8483
+27839.8s 222 Waktu: 42.5 menit | Sisa: 0j 42m (1 tersisa)
+27839.8s 223 ✔ Progress disimpan
+27839.8s 224 
+27839.8s 225 ─────────────────────────────────────────────────────────────────
+27839.8s 226 [12/12] ng=[1, 2, 3]_f=256_dr=0.5_elu
+27839.8s 227 ─────────────────────────────────────────────────────────────────
+28427.0s 228 ├─ Fold 1/5 → F1=0.8610 | Acc=0.8636 | best_ep=3
+28916.7s 229 ├─ Fold 2/5 → F1=0.8519 | Acc=0.8561 | best_ep=2
+29504.5s 230 ├─ Fold 3/5 → F1=0.8629 | Acc=0.8683 | best_ep=3
+29515.2s 231 Exception in thread Thread-auto_conversion:
+29515.2s 232 Traceback (most recent call last):
+29515.2s 233 File "/usr/local/lib/python3.12/dist-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+29515.2s 234 yield
+29515.2s 235 File "/usr/local/lib/python3.12/dist-packages/httpx/_transports/default.py", line 250, in handle_request
+29515.2s 236 resp = self._pool.handle_request(req)
+29515.2s 237 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 238 File "/usr/local/lib/python3.12/dist-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+29515.2s 239 raise exc from None
+29515.2s 240 File "/usr/local/lib/python3.12/dist-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+29515.2s 241 response = connection.handle_request(
+29515.2s 242 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 243 File "/usr/local/lib/python3.12/dist-packages/httpcore/_sync/connection.py", line 103, in handle_request
+29515.2s 244 return self._connection.handle_request(request)
+29515.2s 245 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 246 File "/usr/local/lib/python3.12/dist-packages/httpcore/_sync/http11.py", line 136, in handle_request
+29515.2s 247 raise exc
+29515.2s 248 File "/usr/local/lib/python3.12/dist-packages/httpcore/_sync/http11.py", line 106, in handle_request
+29515.2s 249 ) = self._receive_response_headers(**kwargs)
+29515.2s 250 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 251 File "/usr/local/lib/python3.12/dist-packages/httpcore/_sync/http11.py", line 177, in _receive_response_headers
+29515.2s 252 event = self._receive_event(timeout=timeout)
+29515.2s 253 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 254 File "/usr/local/lib/python3.12/dist-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+29515.2s 255 data = self._network_stream.read(
+29515.2s 256 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 257 File "/usr/local/lib/python3.12/dist-packages/httpcore/_backends/sync.py", line 126, in read
+29515.2s 258 with map_exceptions(exc_map):
+29515.2s 259 ^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 260 File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+29515.2s 261 self.gen.throw(value)
+29515.2s 262 File "/usr/local/lib/python3.12/dist-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+29515.2s 263 raise to_exc(exc) from exc
+29515.2s 264 httpcore.ReadTimeout: The read operation timed out
+29515.2s 265 
+29515.2s 266 The above exception was the direct cause of the following exception:
+29515.2s 267 
+29515.2s 268 Traceback (most recent call last):
+29515.2s 269 File "/usr/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+29515.2s 270 self.run()
+29515.2s 271 File "/usr/lib/python3.12/threading.py", line 1012, in run
+29515.2s 272 self._target(*self._args, **self._kwargs)
+29515.2s 273 File "/usr/local/lib/python3.12/dist-packages/transformers/safetensors_conversion.py", line 116, in auto_conversion
+29515.2s 274 raise e
+29515.2s 275 File "/usr/local/lib/python3.12/dist-packages/transformers/safetensors_conversion.py", line 95, in auto_conversion
+29515.2s 276 sha = get_conversion_pr_reference(api, pretrained_model_name_or_path, **cached_file_kwargs)
+29515.2s 277 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 278 File "/usr/local/lib/python3.12/dist-packages/transformers/safetensors_conversion.py", line 68, in get_conversion_pr_reference
+29515.2s 279 pr = previous_pr(api, model_id, pr_title, token=token)
+29515.2s 280 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 281 File "/usr/local/lib/python3.12/dist-packages/transformers/safetensors_conversion.py", line 16, in previous_pr
+29515.2s 282 commits = api.list_repo_commits(model_id, revision=discussion.git_reference, token=token)
+29515.2s 283 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 284 File "/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+29515.2s 285 return fn(*args, **kwargs)
+29515.2s 286 ^^^^^^^^^^^^^^^^^^^
+29515.2s 287 File "/usr/local/lib/python3.12/dist-packages/huggingface_hub/hf_api.py", line 3549, in list_repo_commits
+29515.2s 288 for item in paginate(
+29515.2s 289 ^^^^^^^^^
+29515.2s 290 File "/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_pagination.py", line 36, in paginate
+29515.2s 291 r = session.get(path, params=params, headers=headers)
+29515.2s 292 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 293 File "/usr/local/lib/python3.12/dist-packages/httpx/_client.py", line 1053, in get
+29515.2s 294 return self.request(
+29515.2s 295 ^^^^^^^^^^^^^
+29515.2s 296 File "/usr/local/lib/python3.12/dist-packages/httpx/_client.py", line 825, in request
+29515.2s 297 return self.send(request, auth=auth, follow_redirects=follow_redirects)
+29515.2s 298 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 299 File "/usr/local/lib/python3.12/dist-packages/httpx/_client.py", line 914, in send
+29515.2s 300 response = self._send_handling_auth(
+29515.2s 301 ^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 302 File "/usr/local/lib/python3.12/dist-packages/httpx/_client.py", line 942, in _send_handling_auth
+29515.2s 303 response = self._send_handling_redirects(
+29515.2s 304 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 305 File "/usr/local/lib/python3.12/dist-packages/httpx/_client.py", line 979, in _send_handling_redirects
+29515.2s 306 response = self._send_single_request(request)
+29515.2s 307 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 308 File "/usr/local/lib/python3.12/dist-packages/httpx/_client.py", line 1014, in _send_single_request
+29515.2s 309 response = transport.handle_request(request)
+29515.2s 310 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 311 File "/usr/local/lib/python3.12/dist-packages/httpx/_transports/default.py", line 249, in handle_request
+29515.2s 312 with map_httpcore_exceptions():
+29515.2s 313 ^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 314 File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+29515.2s 315 self.gen.throw(value)
+29515.2s 316 File "/usr/local/lib/python3.12/dist-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+29515.2s 317 raise mapped_exc(message) from exc
+29515.2s 318 httpx.ReadTimeout: The read operation timed out
+29515.2s 319 
+29515.2s 320 Exception in thread Thread-auto_conversion:
+29515.2s 321 Traceback (most recent call last):
+29515.2s 322 File "/usr/local/lib/python3.12/dist-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+29515.2s 323 yield
+29515.2s 324 File "/usr/local/lib/python3.12/dist-packages/httpx/_transports/default.py", line 250, in handle_request
+29515.2s 325 resp = self._pool.handle_request(req)
+29515.2s 326 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 327 File "/usr/local/lib/python3.12/dist-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+29515.2s 328 raise exc from None
+29515.2s 329 File "/usr/local/lib/python3.12/dist-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+29515.2s 330 response = connection.handle_request(
+29515.2s 331 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 332 File "/usr/local/lib/python3.12/dist-packages/httpcore/_sync/connection.py", line 103, in handle_request
+29515.2s 333 return self._connection.handle_request(request)
+29515.2s 334 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 335 File "/usr/local/lib/python3.12/dist-packages/httpcore/_sync/http11.py", line 136, in handle_request
+29515.2s 336 raise exc
+29515.2s 337 File "/usr/local/lib/python3.12/dist-packages/httpcore/_sync/http11.py", line 106, in handle_request
+29515.2s 338 ) = self._receive_response_headers(**kwargs)
+29515.2s 339 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 340 File "/usr/local/lib/python3.12/dist-packages/httpcore/_sync/http11.py", line 177, in _receive_response_headers
+29515.2s 341 event = self._receive_event(timeout=timeout)
+29515.2s 342 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 343 File "/usr/local/lib/python3.12/dist-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+29515.2s 344 data = self._network_stream.read(
+29515.2s 345 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 346 File "/usr/local/lib/python3.12/dist-packages/httpcore/_backends/sync.py", line 126, in read
+29515.2s 347 with map_exceptions(exc_map):
+29515.2s 348 ^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 349 File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+29515.2s 350 self.gen.throw(value)
+29515.2s 351 File "/usr/local/lib/python3.12/dist-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+29515.2s 352 raise to_exc(exc) from exc
+29515.2s 353 httpcore.ReadTimeout: The read operation timed out
+29515.2s 354 
+29515.2s 355 The above exception was the direct cause of the following exception:
+29515.2s 356 
+29515.2s 357 Traceback (most recent call last):
+29515.2s 358 File "/usr/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+29515.2s 359 self.run()
+29515.2s 360 File "/usr/lib/python3.12/threading.py", line 1012, in run
+29515.2s 361 self._target(*self._args, **self._kwargs)
+29515.2s 362 File "/usr/local/lib/python3.12/dist-packages/transformers/safetensors_conversion.py", line 116, in auto_conversion
+29515.2s 363 raise e
+29515.2s 364 File "/usr/local/lib/python3.12/dist-packages/transformers/safetensors_conversion.py", line 95, in auto_conversion
+29515.2s 365 sha = get_conversion_pr_reference(api, pretrained_model_name_or_path, **cached_file_kwargs)
+29515.2s 366 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 367 File "/usr/local/lib/python3.12/dist-packages/transformers/safetensors_conversion.py", line 68, in get_conversion_pr_reference
+29515.2s 368 pr = previous_pr(api, model_id, pr_title, token=token)
+29515.2s 369 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 370 File "/usr/local/lib/python3.12/dist-packages/transformers/safetensors_conversion.py", line 16, in previous_pr
+29515.2s 371 commits = api.list_repo_commits(model_id, revision=discussion.git_reference, token=token)
+29515.2s 372 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 373 File "/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+29515.2s 374 return fn(*args, **kwargs)
+29515.2s 375 ^^^^^^^^^^^^^^^^^^^
+29515.2s 376 File "/usr/local/lib/python3.12/dist-packages/huggingface_hub/hf_api.py", line 3549, in list_repo_commits
+29515.2s 377 for item in paginate(
+29515.2s 378 ^^^^^^^^^
+29515.2s 379 File "/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_pagination.py", line 36, in paginate
+29515.2s 380 r = session.get(path, params=params, headers=headers)
+29515.2s 381 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 382 File "/usr/local/lib/python3.12/dist-packages/httpx/_client.py", line 1053, in get
+29515.2s 383 return self.request(
+29515.2s 384 ^^^^^^^^^^^^^
+29515.2s 385 File "/usr/local/lib/python3.12/dist-packages/httpx/_client.py", line 825, in request
+29515.2s 386 return self.send(request, auth=auth, follow_redirects=follow_redirects)
+29515.2s 387 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 388 File "/usr/local/lib/python3.12/dist-packages/httpx/_client.py", line 914, in send
+29515.2s 389 response = self._send_handling_auth(
+29515.2s 390 ^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 391 File "/usr/local/lib/python3.12/dist-packages/httpx/_client.py", line 942, in _send_handling_auth
+29515.2s 392 response = self._send_handling_redirects(
+29515.2s 393 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 394 File "/usr/local/lib/python3.12/dist-packages/httpx/_client.py", line 979, in _send_handling_redirects
+29515.2s 395 response = self._send_single_request(request)
+29515.2s 396 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 397 File "/usr/local/lib/python3.12/dist-packages/httpx/_client.py", line 1014, in _send_single_request
+29515.2s 398 response = transport.handle_request(request)
+29515.2s 399 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 400 File "/usr/local/lib/python3.12/dist-packages/httpx/_transports/default.py", line 249, in handle_request
+29515.2s 401 with map_httpcore_exceptions():
+29515.2s 402 ^^^^^^^^^^^^^^^^^^^^^^^^^
+29515.2s 403 File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+29515.2s 404 self.gen.throw(value)
+29515.2s 405 File "/usr/local/lib/python3.12/dist-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+29515.2s 406 raise mapped_exc(message) from exc
+29515.2s 407 httpx.ReadTimeout: The read operation timed out
+29994.3s 408 ├─ Fold 4/5 → F1=0.8299 | Acc=0.8315 | best_ep=2
+30484.0s 409 ├─ Fold 5/5 → F1=0.8394 | Acc=0.8427 | best_ep=2
+30484.0s 410 └─ SELESAI | F1-Macro: 0.8490 ± 0.0127
+30484.0s 411 Acc=0.8524 | Prec=0.8490 | Rec=0.8522
+30484.0s 412 Waktu: 44.1 menit | Sisa: 0j 0m (0 tersisa)
+30484.0s 413 ✔ Progress disimpan
+30484.0s 414 
+30484.0s 415 =================================================================
+30484.0s 416 PHASE 2A SELESAI — 8.5 jam
+30484.0s 417 =================================================================
+30484.0s 418 combo_id     ngram  filter_size  dropout activation  f1_macro  f1_macro_std  accuracy
+30484.0s 419 12 [1, 2, 3]          256      0.5        elu    0.8490        0.0127    0.8524
+30484.0s 420 10 [1, 2, 3]          256      0.5       relu    0.8488        0.0119    0.8515
+30484.0s 421 4 [1, 2, 3]          128      0.5       relu    0.8470        0.0174    0.8498
+30484.0s 422 5 [1, 2, 3]          128      0.5       gelu    0.8465        0.0146    0.8502
+30484.0s 423 11 [1, 2, 3]          256      0.5       gelu    0.8462        0.0140    0.8491
+30484.0s 424 2 [1, 2, 3]          128      0.3       gelu    0.8456        0.0105    0.8481
+30484.0s 425 1 [1, 2, 3]          128      0.3       relu    0.8451        0.0104    0.8485
+30484.0s 426 6 [1, 2, 3]          128      0.5        elu    0.8450        0.0155    0.8476
+30484.0s 427 9 [1, 2, 3]          256      0.3        elu    0.8447        0.0137    0.8472
+30484.0s 428 8 [1, 2, 3]          256      0.3       gelu    0.8428        0.0148    0.8466
+30484.0s 429 7 [1, 2, 3]          256      0.3       relu    0.8420        0.0102    0.8453
+30484.0s 430 3 [1, 2, 3]          128      0.3        elu    0.8394        0.0188    0.8417
+30484.0s 431 
+30484.0s 432 Terbaik 2A: filter=256 | dropout=0.5 | act=elu
+30484.0s 433 
+30484.0s 434 Lanjut ke Phase 2B di sesi berikutnya.
+30489.9s 435 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+30489.9s 436 cells[i][c] = re.sub('\\\\\|', '|', cell)
+30490.1s 437 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+30490.1s 438 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+30490.7s 439 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+30491.5s 440 [NbConvertApp] Writing 1605306 bytes to __notebook__.ipynb
+30493.8s 441 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+30495.0s 442 [NbConvertApp] Writing 1714558 bytes to __results__.html
