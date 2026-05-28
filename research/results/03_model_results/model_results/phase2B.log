@@ -1,0 +1,283 @@
+12.3s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+12.3s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+12.3s 3 0.00s - to python to disable frozen modules.
+12.3s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+13.1s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+13.1s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+13.1s 7 0.00s - to python to disable frozen modules.
+13.1s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+14.5s 9 Environment: Kaggle Notebook
+23.3s 10 ✅ GPU OK: Tesla T4 | sm_75
+23.3s 11 ✅ Setup Kaggle selesai.
+55.5s 12 Device  : cuda
+55.5s 13 GPU     : Tesla T4
+55.5s 14 VRAM    : 15.6 GB
+55.5s 15 Compute : sm_75
+55.5s 16 PyTorch : 2.10.0+cu128
+55.7s 17 Restoring files...
+55.7s 18 ✔ test_set_indices.npy
+55.7s 19 ✔ test_set_fixed.csv
+55.7s 20 ✔ phase1_results.csv
+55.7s 21 ✔ phase1_epoch_history.csv
+55.7s 22 ✔ phase1_fold_details.csv
+55.7s 23 ✔ phase1_summary_top10.csv
+55.7s 24 ✔ phase2A_results.csv
+55.7s 25 ✔ phase2A_epoch_history.csv
+55.7s 26 ✔ phase2A_fold_details.csv
+55.7s 27 
+55.7s 28 Verifikasi:
+55.7s 29 ✔ test_set_indices.npy                          10.5 KB | 2026-05-27 17:29 | 1329 indices
+55.7s 30 ✔ test_set_fixed.csv                            621.1 KB | 2026-05-27 17:29 | 1329 baris
+55.7s 31 ✔ phase1_results.csv                            1.5 KB | 2026-05-27 17:29 | 12 baris
+55.7s 32 ✔ phase1_epoch_history.csv                      24.0 KB | 2026-05-27 17:29 | 280 baris
+55.7s 33 ✔ phase1_fold_details.csv                       4.5 KB | 2026-05-27 17:29 | 60 baris
+55.7s 34 ✔ phase1_summary_top10.csv                      0.7 KB | 2026-05-27 17:29 | 10 baris
+55.7s 35 ✔ phase2A_results.csv                           1.7 KB | 2026-05-27 17:29 | 12 baris
+55.7s 36 ✔ phase2A_epoch_history.csv                     29.5 KB | 2026-05-27 17:29 | 313 baris
+55.7s 37 ✔ phase2A_fold_details.csv                      5.0 KB | 2026-05-27 17:29 | 60 baris
+55.7s 38 Restoring process done!
+55.7s 39 ✅ Konfigurasi berhasil dimuat.
+55.7s 40 Arsitektur : Dual-Path [CLS]+CNN → Concat → Dense(256) → Dense(3)
+55.7s 41 Phase 1    : 12 kombinasi × 5 fold = 60 runs (~9–10 jam)
+55.7s 42 Phase 2A   : 12 kombinasi × 5 fold = 60 runs (~9 jam)
+55.7s 43 Phase 2B   : 12 kombinasi × 5 fold = 60 runs (~9 jam)
+55.7s 44 Phase 3    : 2 kondisi × 5 fold = 10 runs + evaluasi final
+55.7s 45 Memuat data berlabel...
+55.9s 46 Total data berlabel: 6,642
+55.9s 47 positive    : 2,625 (39.5%)
+55.9s 48 negative    : 2,085 (31.4%)
+55.9s 49 neutral     : 1,932 (29.1%)
+55.9s 50 
+55.9s 51 Test set index dimuat dari file existing.
+55.9s 52 Train+Val : 5,313 | Test (FIXED): 1,329
+55.9s 53 Distribusi test set:
+55.9s 54 positive    : 525 (39.5%)
+55.9s 55 negative    : 417 (31.4%)
+55.9s 56 neutral     : 387 (29.1%)
+55.9s 57 Memuat tokenizer: indobenchmark/indobert-base-p2...
+56.3s 58 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+56.3s 59 
+56.3s 60 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+56.9s 61 ✅ Tokenizer berhasil dimuat.
+56.9s 62 Validasi arsitektur Dual-Path...
+67.1s 63 ✅ Output shape  : [2, 3] (expected [2, 3])
+67.1s 64 ✅ [CLS] dim     : 768
+67.1s 65 ✅ CNN dim       : 384 (128×3 kernels)
+67.1s 66 ✅ Combined dim  : 1152 → Dense(256) → Dense(3)
+67.1s 67 
+67.1s 68 ✅ Arsitektur Dual-Path [CLS]+CNN berhasil didefinisikan.
+67.2s 69 ✅ Training utilities berhasil didefinisikan.
+67.2s 70 Optimizer  : AdamW differential LR + weight decay exclusion (4 param groups)
+67.2s 71 Arsitektur : Dual-Path [CLS]+CNN → Concatenate → Dense → Classifier
+67.2s 72 Recording  : epoch_history (semua kombinasi) + fold_details
+67.4s 73 Phase 2B: 12 kombinasi × 5 fold = 60 runs
+67.4s 74 BERT fixed: lr_bert=1e-05 | lr_cnn=0.0001 | bs=32 | wd=0.01
+67.4s 75 [01] ngram=[2, 3, 4] | filter=128 | dropout=0.3 | act=relu
+67.4s 76 [02] ngram=[2, 3, 4] | filter=128 | dropout=0.3 | act=gelu
+67.4s 77 [03] ngram=[2, 3, 4] | filter=128 | dropout=0.3 | act=elu
+67.4s 78 [04] ngram=[2, 3, 4] | filter=128 | dropout=0.5 | act=relu
+67.4s 79 [05] ngram=[2, 3, 4] | filter=128 | dropout=0.5 | act=gelu
+67.4s 80 [06] ngram=[2, 3, 4] | filter=128 | dropout=0.5 | act=elu
+67.4s 81 [07] ngram=[2, 3, 4] | filter=256 | dropout=0.3 | act=relu
+67.4s 82 [08] ngram=[2, 3, 4] | filter=256 | dropout=0.3 | act=gelu
+67.4s 83 [09] ngram=[2, 3, 4] | filter=256 | dropout=0.3 | act=elu
+67.4s 84 [10] ngram=[2, 3, 4] | filter=256 | dropout=0.5 | act=relu
+67.4s 85 [11] ngram=[2, 3, 4] | filter=256 | dropout=0.5 | act=gelu
+67.4s 86 [12] ngram=[2, 3, 4] | filter=256 | dropout=0.5 | act=elu
+67.4s 87 
+67.4s 88 ─────────────────────────────────────────────────────────────────
+67.4s 89 [01/12] ng=[2, 3, 4]_f=128_dr=0.3_relu
+67.4s 90 ─────────────────────────────────────────────────────────────────
+683.3s 91 ├─ Fold 1/5 → F1=0.8516 | Acc=0.8532 | best_ep=3
+1200.6s 92 ├─ Fold 2/5 → F1=0.8550 | Acc=0.8570 | best_ep=2
+1717.8s 93 ├─ Fold 3/5 → F1=0.8523 | Acc=0.8532 | best_ep=2
+2234.9s 94 ├─ Fold 4/5 → F1=0.8195 | Acc=0.8202 | best_ep=2
+2751.8s 95 ├─ Fold 5/5 → F1=0.8352 | Acc=0.8371 | best_ep=2
+2751.8s 96 └─ SELESAI | F1-Macro: 0.8427 ± 0.0135
+2751.8s 97 Acc=0.8441 | Prec=0.8451 | Rec=0.8473
+2751.8s 98 Waktu: 44.7 menit | Sisa: 8j 12m (11 tersisa)
+2751.8s 99 ✔ Progress disimpan
+2751.8s 100 
+2751.8s 101 ─────────────────────────────────────────────────────────────────
+2751.8s 102 [02/12] ng=[2, 3, 4]_f=128_dr=0.3_gelu
+2751.8s 103 ─────────────────────────────────────────────────────────────────
+3371.9s 104 ├─ Fold 1/5 → F1=0.8518 | Acc=0.8532 | best_ep=3
+3889.3s 105 ├─ Fold 2/5 → F1=0.8522 | Acc=0.8532 | best_ep=2
+4406.3s 106 ├─ Fold 3/5 → F1=0.8544 | Acc=0.8551 | best_ep=2
+4923.5s 107 ├─ Fold 4/5 → F1=0.8268 | Acc=0.8286 | best_ep=2
+5440.8s 108 ├─ Fold 5/5 → F1=0.8324 | Acc=0.8362 | best_ep=2
+5440.8s 109 └─ SELESAI | F1-Macro: 0.8435 ± 0.0115
+5440.8s 110 Acc=0.8453 | Prec=0.8445 | Rec=0.8471
+5440.8s 111 Waktu: 44.8 menit | Sisa: 7j 27m (10 tersisa)
+5440.8s 112 ✔ Progress disimpan
+5440.8s 113 
+5440.8s 114 ─────────────────────────────────────────────────────────────────
+5440.8s 115 [03/12] ng=[2, 3, 4]_f=128_dr=0.3_elu
+5440.8s 116 ─────────────────────────────────────────────────────────────────
+5957.3s 117 ├─ Fold 1/5 → F1=0.8387 | Acc=0.8401 | best_ep=2
+6473.4s 118 ├─ Fold 2/5 → F1=0.8584 | Acc=0.8598 | best_ep=2
+6989.2s 119 ├─ Fold 3/5 → F1=0.8548 | Acc=0.8570 | best_ep=2
+7506.4s 120 ├─ Fold 4/5 → F1=0.8302 | Acc=0.8333 | best_ep=2
+7920.3s 121 ├─ Fold 5/5 → F1=0.8228 | Acc=0.8249 | best_ep=1
+7920.3s 122 └─ SELESAI | F1-Macro: 0.8410 ± 0.0138
+7920.3s 123 Acc=0.8430 | Prec=0.8413 | Rec=0.8439
+7920.3s 124 Waktu: 41.3 menit | Sisa: 6j 32m (9 tersisa)
+7920.3s 125 ✔ Progress disimpan
+7920.3s 126 
+7920.3s 127 ─────────────────────────────────────────────────────────────────
+7920.3s 128 [04/12] ng=[2, 3, 4]_f=128_dr=0.5_relu
+7920.3s 129 ─────────────────────────────────────────────────────────────────
+8538.9s 130 ├─ Fold 1/5 → F1=0.8369 | Acc=0.8391 | best_ep=3
+9156.9s 131 ├─ Fold 2/5 → F1=0.8487 | Acc=0.8532 | best_ep=3
+9775.4s 132 ├─ Fold 3/5 → F1=0.8710 | Acc=0.8730 | best_ep=3
+10291.2s 133 ├─ Fold 4/5 → F1=0.8301 | Acc=0.8315 | best_ep=2
+10704.3s 134 ├─ Fold 5/5 → F1=0.8127 | Acc=0.8164 | best_ep=1
+10704.3s 135 └─ SELESAI | F1-Macro: 0.8399 ± 0.0194
+10704.3s 136 Acc=0.8426 | Prec=0.8401 | Rec=0.8431
+10704.3s 137 Waktu: 46.4 menit | Sisa: 5j 54m (8 tersisa)
+10704.3s 138 ✔ Progress disimpan
+10704.3s 139 
+10704.3s 140 ─────────────────────────────────────────────────────────────────
+10704.3s 141 [05/12] ng=[2, 3, 4]_f=128_dr=0.5_gelu
+10704.3s 142 ─────────────────────────────────────────────────────────────────
+11220.7s 143 ├─ Fold 1/5 → F1=0.8406 | Acc=0.8420 | best_ep=2
+11736.7s 144 ├─ Fold 2/5 → F1=0.8520 | Acc=0.8542 | best_ep=2
+12252.9s 145 ├─ Fold 3/5 → F1=0.8538 | Acc=0.8561 | best_ep=2
+12769.5s 146 ├─ Fold 4/5 → F1=0.8139 | Acc=0.8192 | best_ep=2
+13286.4s 147 ├─ Fold 5/5 → F1=0.8238 | Acc=0.8286 | best_ep=2
+13286.4s 148 └─ SELESAI | F1-Macro: 0.8368 ± 0.0157
+13286.4s 149 Acc=0.8400 | Prec=0.8387 | Rec=0.8380
+13286.4s 150 Waktu: 43.0 menit | Sisa: 5j 8m (7 tersisa)
+13286.4s 151 ✔ Progress disimpan
+13286.4s 152 
+13286.4s 153 ─────────────────────────────────────────────────────────────────
+13286.4s 154 [06/12] ng=[2, 3, 4]_f=128_dr=0.5_elu
+13286.4s 155 ─────────────────────────────────────────────────────────────────
+13801.2s 156 ├─ Fold 1/5 → F1=0.8409 | Acc=0.8429 | best_ep=2
+14419.6s 157 ├─ Fold 2/5 → F1=0.8615 | Acc=0.8636 | best_ep=3
+14934.7s 158 ├─ Fold 3/5 → F1=0.8526 | Acc=0.8561 | best_ep=2
+15450.7s 159 ├─ Fold 4/5 → F1=0.8209 | Acc=0.8277 | best_ep=2
+15966.7s 160 ├─ Fold 5/5 → F1=0.8286 | Acc=0.8333 | best_ep=2
+15966.7s 161 └─ SELESAI | F1-Macro: 0.8409 ± 0.0149
+15966.7s 162 Acc=0.8447 | Prec=0.8422 | Rec=0.8431
+15966.7s 163 Waktu: 44.7 menit | Sisa: 4j 24m (6 tersisa)
+15966.7s 164 ✔ Progress disimpan
+15966.7s 165 
+15966.7s 166 ─────────────────────────────────────────────────────────────────
+15966.7s 167 [07/12] ng=[2, 3, 4]_f=256_dr=0.3_relu
+15966.7s 168 ─────────────────────────────────────────────────────────────────
+16487.7s 169 ├─ Fold 1/5 → F1=0.8516 | Acc=0.8551 | best_ep=2
+17008.9s 170 ├─ Fold 2/5 → F1=0.8486 | Acc=0.8523 | best_ep=2
+17633.7s 171 ├─ Fold 3/5 → F1=0.8507 | Acc=0.8561 | best_ep=3
+18155.1s 172 ├─ Fold 4/5 → F1=0.8238 | Acc=0.8277 | best_ep=2
+18676.3s 173 ├─ Fold 5/5 → F1=0.8292 | Acc=0.8324 | best_ep=2
+18676.3s 174 └─ SELESAI | F1-Macro: 0.8408 ± 0.0118
+18676.3s 175 Acc=0.8447 | Prec=0.8416 | Rec=0.8413
+18676.3s 176 Waktu: 45.2 menit | Sisa: 3j 41m (5 tersisa)
+18676.3s 177 ✔ Progress disimpan
+18676.3s 178 
+18676.3s 179 ─────────────────────────────────────────────────────────────────
+18676.3s 180 [08/12] ng=[2, 3, 4]_f=256_dr=0.3_gelu
+18676.3s 181 ─────────────────────────────────────────────────────────────────
+19197.4s 182 ├─ Fold 1/5 → F1=0.8480 | Acc=0.8542 | best_ep=2
+19718.8s 183 ├─ Fold 2/5 → F1=0.8620 | Acc=0.8655 | best_ep=2
+20240.0s 184 ├─ Fold 3/5 → F1=0.8640 | Acc=0.8664 | best_ep=2
+20761.3s 185 ├─ Fold 4/5 → F1=0.8286 | Acc=0.8296 | best_ep=2
+21282.6s 186 ├─ Fold 5/5 → F1=0.8098 | Acc=0.8173 | best_ep=2
+21282.6s 187 └─ SELESAI | F1-Macro: 0.8425 ± 0.0207
+21282.6s 188 Acc=0.8466 | Prec=0.8445 | Rec=0.8438
+21282.6s 189 Waktu: 43.4 menit | Sisa: 2j 56m (4 tersisa)
+21282.6s 190 ✔ Progress disimpan
+21282.6s 191 
+21282.6s 192 ─────────────────────────────────────────────────────────────────
+21282.6s 193 [09/12] ng=[2, 3, 4]_f=256_dr=0.3_elu
+21282.6s 194 ─────────────────────────────────────────────────────────────────
+21803.5s 195 ├─ Fold 1/5 → F1=0.8467 | Acc=0.8485 | best_ep=2
+22427.9s 196 ├─ Fold 2/5 → F1=0.8630 | Acc=0.8645 | best_ep=3
+22948.6s 197 ├─ Fold 3/5 → F1=0.8535 | Acc=0.8542 | best_ep=2
+23469.5s 198 ├─ Fold 4/5 → F1=0.8288 | Acc=0.8324 | best_ep=2
+23990.4s 199 ├─ Fold 5/5 → F1=0.8324 | Acc=0.8371 | best_ep=2
+23990.4s 200 └─ SELESAI | F1-Macro: 0.8449 ± 0.0128
+23990.4s 201 Acc=0.8473 | Prec=0.8460 | Rec=0.8488
+23990.4s 202 Waktu: 45.1 menit | Sisa: 2j 12m (3 tersisa)
+23990.4s 203 ✔ Progress disimpan
+23990.4s 204 
+23990.4s 205 ─────────────────────────────────────────────────────────────────
+23990.4s 206 [10/12] ng=[2, 3, 4]_f=256_dr=0.5_relu
+23990.4s 207 ─────────────────────────────────────────────────────────────────
+24510.2s 208 ├─ Fold 1/5 → F1=0.8488 | Acc=0.8514 | best_ep=2
+25134.4s 209 ├─ Fold 2/5 → F1=0.8576 | Acc=0.8617 | best_ep=3
+25654.2s 210 ├─ Fold 3/5 → F1=0.8535 | Acc=0.8551 | best_ep=2
+26173.9s 211 ├─ Fold 4/5 → F1=0.8293 | Acc=0.8324 | best_ep=2
+26694.1s 212 ├─ Fold 5/5 → F1=0.8278 | Acc=0.8315 | best_ep=2
+26694.1s 213 └─ SELESAI | F1-Macro: 0.8434 ± 0.0124
+26694.1s 214 Acc=0.8464 | Prec=0.8432 | Rec=0.8462
+26694.1s 215 Waktu: 45.1 menit | Sisa: 1j 28m (2 tersisa)
+26694.1s 216 ✔ Progress disimpan
+26694.1s 217 
+26694.1s 218 ─────────────────────────────────────────────────────────────────
+26694.1s 219 [11/12] ng=[2, 3, 4]_f=256_dr=0.5_gelu
+26694.1s 220 ─────────────────────────────────────────────────────────────────
+27214.3s 221 ├─ Fold 1/5 → F1=0.8491 | Acc=0.8514 | best_ep=2
+27735.0s 222 ├─ Fold 2/5 → F1=0.8592 | Acc=0.8627 | best_ep=2
+28255.1s 223 ├─ Fold 3/5 → F1=0.8543 | Acc=0.8561 | best_ep=2
+28880.1s 224 ├─ Fold 4/5 → F1=0.8348 | Acc=0.8371 | best_ep=3
+29400.5s 225 ├─ Fold 5/5 → F1=0.8187 | Acc=0.8192 | best_ep=2
+29400.5s 226 └─ SELESAI | F1-Macro: 0.8432 ± 0.0147
+29400.5s 227 Acc=0.8453 | Prec=0.8445 | Rec=0.8481
+29400.5s 228 Waktu: 45.1 menit | Sisa: 0j 44m (1 tersisa)
+29400.5s 229 ✔ Progress disimpan
+29400.5s 230 
+29400.5s 231 ─────────────────────────────────────────────────────────────────
+29400.5s 232 [12/12] ng=[2, 3, 4]_f=256_dr=0.5_elu
+29400.5s 233 ─────────────────────────────────────────────────────────────────
+29920.6s 234 ├─ Fold 1/5 → F1=0.8387 | Acc=0.8420 | best_ep=2
+30441.4s 235 ├─ Fold 2/5 → F1=0.8474 | Acc=0.8495 | best_ep=2
+30961.3s 236 ├─ Fold 3/5 → F1=0.8698 | Acc=0.8730 | best_ep=2
+31481.8s 237 ├─ Fold 4/5 → F1=0.8266 | Acc=0.8286 | best_ep=2
+32002.0s 238 ├─ Fold 5/5 → F1=0.8078 | Acc=0.8089 | best_ep=2
+32002.0s 239 └─ SELESAI | F1-Macro: 0.8381 ± 0.0207
+32002.0s 240 Acc=0.8404 | Prec=0.8403 | Rec=0.8405
+32002.0s 241 Waktu: 43.4 menit | Sisa: 0j 0m (0 tersisa)
+32002.0s 242 ✔ Progress disimpan
+32002.0s 243 
+32002.0s 244 =================================================================
+32002.0s 245 PHASE 2B SELESAI — 8.9 jam
+32002.0s 246 =================================================================
+32002.0s 247 HASIL GABUNGAN Phase 2A + 2B (top-10):
+32002.0s 248 combo_id batch     ngram  filter_size  dropout activation  f1_macro  f1_macro_std  f1_weighted  accuracy  precision  recall
+32002.0s 249 12     A [1, 2, 3]          256      0.5        elu    0.8490        0.0127       0.8527    0.8524     0.8490  0.8522
+32002.0s 250 10     A [1, 2, 3]          256      0.5       relu    0.8488        0.0119       0.8522    0.8515     0.8494  0.8523
+32002.0s 251 4     A [1, 2, 3]          128      0.5       relu    0.8470        0.0174       0.8507    0.8498     0.8482  0.8502
+32002.0s 252 5     A [1, 2, 3]          128      0.5       gelu    0.8465        0.0146       0.8505    0.8502     0.8459  0.8488
+32002.0s 253 11     A [1, 2, 3]          256      0.5       gelu    0.8462        0.0140       0.8497    0.8491     0.8458  0.8483
+32002.0s 254 2     A [1, 2, 3]          128      0.3       gelu    0.8456        0.0105       0.8491    0.8481     0.8460  0.8489
+32002.0s 255 1     A [1, 2, 3]          128      0.3       relu    0.8451        0.0104       0.8485    0.8485     0.8451  0.8477
+32002.0s 256 6     A [1, 2, 3]          128      0.5        elu    0.8450        0.0155       0.8486    0.8476     0.8457  0.8475
+32002.0s 257 109     B [2, 3, 4]          256      0.3        elu    0.8449        0.0128       0.8482    0.8473     0.8460  0.8488
+32002.0s 258 9     A [1, 2, 3]          256      0.3        elu    0.8447        0.0137       0.8482    0.8472     0.8451  0.8481
+32002.0s 259 
+32002.0s 260 CNN Config Terbaik:
+32002.0s 261 batch=A | ngram=[1, 2, 3] | filter=256
+32002.0s 262 dropout=0.5 | activation=elu
+32002.0s 263 F1-Macro: 0.8490 ± 0.0127
+32002.0s 264 
+32002.0s 265 ⚠️  Update BEST_NGRAM, BEST_FILTER, BEST_DROPOUT, BEST_ACTIVATION sebelum Phase 3!
+32002.8s 266 ✔ phase2_results.png tersimpan
+32003.3s 267 ✔ phase2_hyperparam_impact.png tersimpan
+32003.3s 268 ✅ p2a_epoch_history dimuat dari CSV
+32003.3s 269 ✅ p2a_fold_details dimuat dari CSV
+32003.8s 270 ✔ Learning curve: phase2_learning_curves_best.png
+32004.2s 271 ✔ Stabilitas K-Fold: phase2_kfold_stability.png
+32004.2s 272 ✔ Semua visualisasi Phase 2 tersimpan.
+32004.4s 273 ⚠️  phase3_kfold_results.csv belum ada — Phase 3 belum dijalankan.
+32004.5s 274 ⚠️  phase3_kfold_results.csv belum ada.
+32004.5s 275 ⚠️  phase3_fold_details.csv belum ada.
+32011.0s 276 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+32011.0s 277 cells[i][c] = re.sub('\\\\\|', '|', cell)
+32011.2s 278 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+32011.2s 279 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+32012.0s 280 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+32012.7s 281 [NbConvertApp] Writing 1606170 bytes to __notebook__.ipynb
+32015.0s 282 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+32016.2s 283 [NbConvertApp] Writing 1743976 bytes to __results__.html
