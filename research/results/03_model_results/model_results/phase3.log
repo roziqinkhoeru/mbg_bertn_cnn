@@ -1,0 +1,194 @@
+6.8s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.8s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.8s 3 0.00s - to python to disable frozen modules.
+6.8s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+7.4s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+7.4s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+7.4s 7 0.00s - to python to disable frozen modules.
+7.4s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+8.5s 9 Environment: Kaggle Notebook
+13.8s 10 ✅ GPU OK: Tesla T4 | sm_75
+13.8s 11 ✅ Setup Kaggle selesai.
+33.2s 12 Device  : cuda
+33.2s 13 GPU     : Tesla T4
+33.2s 14 VRAM    : 15.6 GB
+33.2s 15 Compute : sm_75
+33.2s 16 PyTorch : 2.10.0+cu128
+33.3s 17 Restoring files...
+33.3s 18 ✔ test_set_indices.npy
+33.3s 19 ✔ test_set_fixed.csv
+33.3s 20 ✔ phase1_results.csv
+33.3s 21 ✔ phase1_epoch_history.csv
+33.3s 22 ✔ phase1_fold_details.csv
+33.3s 23 ✔ phase1_summary_top10.csv
+33.3s 24 ✔ phase2A_results.csv
+33.3s 25 ✔ phase2A_epoch_history.csv
+33.3s 26 ✔ phase2A_fold_details.csv
+33.3s 27 ✔ phase2B_results.csv
+33.3s 28 ✔ phase2B_epoch_history.csv
+33.3s 29 ✔ phase2B_fold_details.csv
+33.3s 30 ✔ phase2_combined_results.csv
+33.3s 31 ✔ phase2_summary_top10.csv
+33.3s 32 
+33.3s 33 Verifikasi:
+33.3s 34 ✔ test_set_indices.npy                          10.5 KB | 2026-05-28 03:38 | 1329 indices
+33.3s 35 ✔ test_set_fixed.csv                            621.1 KB | 2026-05-28 03:38 | 1329 baris
+33.3s 36 ✔ phase1_results.csv                            1.5 KB | 2026-05-28 03:38 | 12 baris
+33.3s 37 ✔ phase1_epoch_history.csv                      24.0 KB | 2026-05-28 03:38 | 280 baris
+33.3s 38 ✔ phase1_fold_details.csv                       4.5 KB | 2026-05-28 03:38 | 60 baris
+33.3s 39 ✔ phase1_summary_top10.csv                      0.7 KB | 2026-05-28 03:38 | 10 baris
+33.3s 40 ✔ phase2A_results.csv                           1.7 KB | 2026-05-28 03:38 | 12 baris
+33.3s 41 ✔ phase2A_epoch_history.csv                     29.5 KB | 2026-05-28 03:38 | 313 baris
+33.3s 42 ✔ phase2A_fold_details.csv                      5.0 KB | 2026-05-28 03:38 | 60 baris
+33.3s 43 ✔ phase2B_results.csv                           1.7 KB | 2026-05-28 03:38 | 12 baris
+33.3s 44 ✔ phase2B_epoch_history.csv                     29.5 KB | 2026-05-28 03:38 | 308 baris
+33.3s 45 ✔ phase2B_fold_details.csv                      5.1 KB | 2026-05-28 03:38 | 60 baris
+33.3s 46 ✔ phase2_combined_results.csv                   3.3 KB | 2026-05-28 03:38 | 24 baris
+33.3s 47 ✔ phase2_summary_top10.csv                      0.8 KB | 2026-05-28 03:38 | 10 baris
+33.3s 48 Restoring process done!
+33.3s 49 ✅ Konfigurasi berhasil dimuat.
+33.3s 50 Arsitektur : Dual-Path [CLS]+CNN → Concat → Dense(256) → Dense(3)
+33.3s 51 Phase 1    : 12 kombinasi × 5 fold = 60 runs (~9–10 jam)
+33.3s 52 Phase 2A   : 12 kombinasi × 5 fold = 60 runs (~9 jam)
+33.3s 53 Phase 2B   : 12 kombinasi × 5 fold = 60 runs (~9 jam)
+33.3s 54 Phase 3    : 2 kondisi × 5 fold = 10 runs + evaluasi final
+33.4s 55 Memuat data berlabel...
+33.5s 56 Total data berlabel: 6,642
+33.5s 57 positive    : 2,625 (39.5%)
+33.5s 58 negative    : 2,085 (31.4%)
+33.5s 59 neutral     : 1,932 (29.1%)
+33.5s 60 
+33.5s 61 Test set index dimuat dari file existing.
+33.5s 62 Train+Val : 5,313 | Test (FIXED): 1,329
+33.5s 63 Distribusi test set:
+33.5s 64 positive    : 525 (39.5%)
+33.5s 65 negative    : 417 (31.4%)
+33.5s 66 neutral     : 387 (29.1%)
+33.6s 67 Memuat tokenizer: indobenchmark/indobert-base-p2...
+33.7s 68 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+33.7s 69 
+33.7s 70 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+34.6s 71 ✅ Tokenizer berhasil dimuat.
+34.6s 72 Validasi arsitektur Dual-Path...
+40.9s 73 ✅ Output shape  : [2, 3] (expected [2, 3])
+40.9s 74 ✅ [CLS] dim     : 768
+40.9s 75 ✅ CNN dim       : 384 (128×3 kernels)
+40.9s 76 ✅ Combined dim  : 1152 → Dense(256) → Dense(3)
+40.9s 77 
+40.9s 78 ✅ Arsitektur Dual-Path [CLS]+CNN berhasil didefinisikan.
+41.0s 79 ✅ Training utilities berhasil didefinisikan.
+41.0s 80 Optimizer  : AdamW differential LR + weight decay exclusion (4 param groups)
+41.0s 81 Arsitektur : Dual-Path [CLS]+CNN → Concatenate → Dense → Classifier
+41.0s 82 Recording  : epoch_history (semua kombinasi) + fold_details
+41.2s 83 ✅ Semua konfigurasi final tersedia.
+41.2s 84 Arsitektur : Dual-Path [CLS]+CNN → Concat → Dense(256) → Dense(3)
+41.2s 85 LR         : lr_bert=1e-05 | lr_cnn=0.0001
+41.2s 86 Training   : bs=32 | wd=0.01 (non-bias/LayerNorm only)
+41.2s 87 CNN        : ngram=[1, 2, 3] | filter=256 | dropout=0.5 | act=elu
+41.2s 88 Fixed      : max_len=128, warmup=0.1, eps=1e-08, seed=42
+41.2s 89 cls_dropout=0.1, dense_size=256
+41.4s 90 
+41.4s 91 ─────────────────────────────────────────────────────────────────
+41.4s 92 Kondisi S1 — Imbalanced + Class Weighting
+41.4s 93 ─────────────────────────────────────────────────────────────────
+603.7s 94 ├─ Fold 1/5 → F1=0.8484 | Acc=0.8514 | best_ep=2
+1170.2s 95 ├─ Fold 2/5 → F1=0.8450 | Acc=0.8467 | best_ep=2
+1848.8s 96 ├─ Fold 3/5 → F1=0.8582 | Acc=0.8608 | best_ep=3
+2415.2s 97 ├─ Fold 4/5 → F1=0.8221 | Acc=0.8277 | best_ep=2
+2981.7s 98 ├─ Fold 5/5 → F1=0.8235 | Acc=0.8249 | best_ep=2
+2981.7s 99 └─ SELESAI | F1-Macro: 0.8394 ± 0.0143
+2981.7s 100 Acc=0.8423 | Waktu: 49.0 menit
+2981.7s 101 
+2981.7s 102 ─────────────────────────────────────────────────────────────────
+2981.7s 103 Kondisi S2 — Random Undersampling
+2981.7s 104 ─────────────────────────────────────────────────────────────────
+3480.9s 105 ├─ Fold 1/5 → F1=0.8439 | Acc=0.8467 | best_ep=2
+4080.9s 106 ├─ Fold 2/5 → F1=0.8617 | Acc=0.8645 | best_ep=3
+4580.4s 107 ├─ Fold 3/5 → F1=0.8656 | Acc=0.8692 | best_ep=2
+5080.3s 108 ├─ Fold 4/5 → F1=0.8258 | Acc=0.8277 | best_ep=2
+5579.6s 109 ├─ Fold 5/5 → F1=0.8337 | Acc=0.8352 | best_ep=2
+5579.6s 110 └─ SELESAI | F1-Macro: 0.8461 ± 0.0155
+5579.6s 111 Acc=0.8487 | Waktu: 43.3 menit
+5579.6s 112 
+5579.6s 113 =================================================================
+5579.6s 114 PHASE 3 K-FOLD — 92.3 menit
+5579.6s 115 =================================================================
+5579.6s 116 condition                  description  f1_macro  f1_macro_std  accuracy  precision  recall
+5579.6s 117 S1 Imbalanced + Class Weighting    0.8394        0.0143    0.8423     0.8415  0.8421
+5579.6s 118 S2         Random Undersampling    0.8461        0.0155    0.8487     0.8457  0.8487
+5579.6s 119 
+5579.6s 120 Kondisi terbaik: S2
+5579.6s 121 ✅ best_cond dimuat dari CSV: S2
+5580.1s 122 ✔ Visualisasi Phase 3 K-Fold tersimpan.
+5580.3s 123 =================================================================
+5580.3s 124 FINAL TRAINING & EVALUASI TEST SET (kondisi S2)
+5580.3s 125 =================================================================
+5580.3s 126 Arsitektur : Dual-Path [CLS]+CNN → Concat → Dense(256) → Dense(3)
+5580.3s 127 LR         : lr_bert=1e-05 | lr_cnn=0.0001
+5580.3s 128 CNN        : ngram=[1, 2, 3] | filter=256 | dropout=0.5 | act=elu
+5580.3s 129 Training   : bs=32 | wd=0.01
+6204.8s 130 Early stopping ep5
+6204.8s 131 Training selesai — 10.4 menit
+6215.3s 132 
+6215.3s 133 =================================================================
+6215.3s 134 EVALUASI FINAL — TEST SET (S2)
+6215.3s 135 =================================================================
+6215.3s 136 accuracy       : 0.8570
+6215.3s 137 precision      : 0.8551
+6215.3s 138 recall         : 0.8585
+6215.3s 139 f1_macro       : 0.8547
+6215.3s 140 f1_weighted    : 0.8587
+6215.3s 141 
+6215.3s 142 precision    recall  f1-score   support
+6215.3s 143 
+6215.3s 144 positive       0.94      0.84      0.89       525
+6215.3s 145 negative       0.86      0.88      0.87       417
+6215.3s 146 neutral       0.76      0.86      0.80       387
+6215.3s 147 
+6215.3s 148 accuracy                           0.86      1329
+6215.3s 149 macro avg       0.86      0.86      0.85      1329
+6215.3s 150 weighted avg       0.86      0.86      0.86      1329
+6215.3s 151 
+6215.3s 152 Per-class F1: positive=0.8891 | negative=0.8717 | neutral=0.8034
+6215.8s 153 ✔ Confusion matrix pair disimpan.
+6215.8s 154 
+6215.8s 155 ✔ test_predictions.csv (1,329 baris) | Accuracy: 85.70%
+6216.2s 156 
+6216.2s 157 =================================================================
+6216.2s 158 RINGKASAN OUTPUT NOTEBOOK 03
+6216.2s 159 =================================================================
+6216.2s 160 ✔ phase1_results.csv                                 Metrik per kombinasi Phase 1
+6216.2s 161 ✔ phase1_epoch_history.csv                           Epoch history semua kombinasi Phase 1
+6216.2s 162 ✔ phase1_fold_details.csv                            Fold details semua kombinasi Phase 1
+6216.2s 163 ✔ phase1_summary_top10.csv                           Top-10 Phase 1 — siap laporan
+6216.2s 164 ○ phase1_results.png                                 Heatmap + bar top-10
+6216.2s 165 ○ phase1_lr_sensitivity.png                          Line plot sensitivitas LR
+6216.2s 166 ○ phase1_learning_curves_best.png                    Learning curve config terbaik Phase 1
+6216.2s 167 ○ phase1_kfold_stability.png                         Stabilitas K-Fold Phase 1
+6216.2s 168 ✔ phase2A_results.csv                                Metrik per kombinasi Phase 2A
+6216.2s 169 ✔ phase2B_results.csv                                Metrik per kombinasi Phase 2B
+6216.2s 170 ✔ phase2_combined_results.csv                        Gabungan Phase 2A + 2B
+6216.2s 171 ✔ phase2_summary_top10.csv                           Top-10 Phase 2 — siap laporan
+6216.2s 172 ○ phase2_results.png                                 Bar chart A+B dengan warna batch
+6216.2s 173 ○ phase2_hyperparam_impact.png                       Dampak per dimensi CNN
+6216.2s 174 ○ phase2_learning_curves_best.png                    Learning curve config terbaik Phase 2
+6216.2s 175 ○ phase2_kfold_stability.png                         Stabilitas K-Fold Phase 2
+6216.2s 176 ✔ phase3_epoch_history.csv                           Epoch history Phase 3 K-Fold
+6216.2s 177 ✔ phase3_kfold_results.csv                           Summary K-Fold S1 vs S2
+6216.2s 178 ✔ phase3_fold_details.csv                            Fold details S1 dan S2
+6216.2s 179 ✔ phase3_s1_vs_s2.png                                Grouped bar + box plot S1 vs S2
+6216.2s 180 ✔ final_training_epoch_history.csv                   Epoch history final training
+6216.2s 181 ✔ proposed_S2_cm_pair.png                            Confusion matrix unnormalized + normalized
+6216.2s 182 ✔ test_predictions.csv                               Prediksi per tweet + confidence + prob per kelas
+6216.2s 183 ✔ indobert_cnn_dualpath_S2.pt                        Model checkpoint final (Dual-Path)
+6216.2s 184 
+6216.2s 185 Lanjut ke Notebook 04 — BERT-only Baseline
+6216.2s 186 Gunakan: lr_bert=1e-05 | bs=32 | wd=0.01
+6221.6s 187 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+6221.6s 188 cells[i][c] = re.sub('\\\\\|', '|', cell)
+6221.7s 189 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+6221.7s 190 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+6222.4s 191 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+6222.8s 192 [NbConvertApp] Writing 452746 bytes to __notebook__.ipynb
+6225.1s 193 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+6226.1s 194 [NbConvertApp] Writing 824254 bytes to __results__.html
