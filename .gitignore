@@ -1,6 +1,8 @@
 /dataset/raw
 /dataset/merge
 /extended/results/saved_models
+/research/results/03_model_results/saved_models
+/research/results/0405_baseline_results/saved_models
 
 *.pt
 *.pkl
