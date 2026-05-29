@@ -1,0 +1,132 @@
+9.3s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+9.3s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+9.3s 3 0.00s - to python to disable frozen modules.
+9.3s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+10.1s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+10.1s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+10.1s 7 0.00s - to python to disable frozen modules.
+10.1s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+11.6s 9 Python : 3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0]
+11.6s 10 CWD    : /kaggle/working
+11.6s 11 ✅ Setup selesai. (CPU — tidak membutuhkan GPU)
+15.2s 12 ✅ Library berhasil dimuat.
+15.3s 13 Restoring files dari final-training-dual-path-outputs...
+15.3s 14 ✔ bert_only_summary.csv
+15.3s 15 ✔ ml_baseline_summary.csv
+15.3s 16 Done.
+15.3s 17 ✅ Konfigurasi berhasil dimuat.
+15.3s 18 Jumlah model yang dibandingkan: 5
+15.3s 19 Output dir: /kaggle/working/comparison_results
+15.3s 20 ===========================================================================
+15.3s 21 RINGKASAN PERBANDINGAN SEMUA MODEL — TEST SET
+15.3s 22 ===========================================================================
+15.3s 23 Model                                F1-Macro  Accuracy  KFold F1     Std
+15.3s 24 ───────────────────────────────────────────────────────────────────────────
+15.3s 25 IndoBERT+CNN Dual-Path (Proposed)      0.8547    0.8570    0.8461  0.0155  ★
+15.3s 26 IndoBERT-only (DL Baseline)            0.8630    0.8668    0.8429  0.0188 ←
+15.3s 27 SVM (ML Baseline)                      0.8267    0.8322    0.8023  0.0107
+15.3s 28 Logistic Regression (ML Baseline)      0.8251    0.8284    0.8029  0.0113
+15.3s 29 Random Forest (ML Baseline)            0.7966    0.8006    0.7706  0.0115
+15.3s 30 ───────────────────────────────────────────────────────────────────────────
+15.3s 31 Best overall: IndoBERT-only (DL Baseline) (F1-Macro=0.8630)
+15.3s 32 ===========================================================================
+15.3s 33 
+15.3s 34 Per-class F1:
+15.3s 35 Model                                 Positive   Negative    Neutral
+15.3s 36 ──────────────────────────────────────────────────────────────────────
+15.3s 37 IndoBERT+CNN Dual-Path (Proposed)       0.8891     0.8717     0.8034
+15.3s 38 IndoBERT-only (DL Baseline)             0.9017     0.8789     0.8086
+15.3s 39 SVM (ML Baseline)                       0.8658     0.8482     0.7661
+15.3s 40 Logistic Regression (ML Baseline)       0.8560     0.8416     0.7778
+15.3s 41 Random Forest (ML Baseline)             0.8299     0.8143     0.7457
+15.3s 42 
+15.3s 43 ✔ model_comparison_summary.csv tersimpan
+16.1s 44 ✔ comparison_f1macro.png tersimpan
+16.6s 45 ✔ comparison_metrics_full.png tersimpan
+16.9s 46 ✔ comparison_perclass_f1.png tersimpan
+17.2s 47 ✔ comparison_kfold_stability.png tersimpan
+17.4s 48 ✔ comparison_radar.png tersimpan
+17.4s 49 
+17.4s 50 ✅ Semua visualisasi perbandingan tersimpan.
+18.0s 51 ✔ comparison_heatmap.png tersimpan
+18.1s 52 ======================================================================
+18.1s 53 ANALISIS KOMPARATIF
+18.1s 54 ======================================================================
+18.1s 55 
+18.1s 56 1. Deep Learning vs Machine Learning:
+18.1s 57 Best ML (SVM)          : F1 = 0.8267
+18.1s 58 Proposed (IndoBERT+CNN)   : F1 = 0.8547 (+0.0280 vs best ML)
+18.1s 59 BERT-only                 : F1 = 0.8630 (+0.0363 vs best ML)
+18.1s 60 
+18.1s 61 2. Proposed (IndoBERT+CNN) vs BERT-only Baseline:
+18.1s 62 Delta F1-Macro  : -0.0083 (BERT-only lebih baik)
+18.1s 63 Delta Accuracy  : -0.0098
+18.1s 64 K-Fold overlap  : proposed=0.8461±0.0155 vs bert=0.8429±0.0188
+18.1s 65 → Perbedaan test set kecil (0.0083), K-Fold std saling overlap
+18.1s 66 → Tidak signifikan secara statistik; kedua DL model sebanding
+18.1s 67 
+18.1s 68 3. Analisis Per-class F1:
+18.1s 69 Kelas Neutral — paling sulit di semua model:
+18.1s 70 IndoBERT+CNN Dual-Path (Proposed)  : 0.8034
+18.1s 71 IndoBERT-only (DL Baseline)        : 0.8086
+18.1s 72 SVM (ML Baseline)                  : 0.7661
+18.1s 73 Logistic Regression (ML Baseline)  : 0.7778
+18.1s 74 Random Forest (ML Baseline)        : 0.7457
+18.1s 75 Kelas Positive — paling mudah di semua model:
+18.1s 76 IndoBERT+CNN Dual-Path (Proposed)  : 0.8891
+18.1s 77 IndoBERT-only (DL Baseline)        : 0.9017
+18.1s 78 SVM (ML Baseline)                  : 0.8658
+18.1s 79 Logistic Regression (ML Baseline)  : 0.8560
+18.1s 80 Random Forest (ML Baseline)        : 0.8299
+18.1s 81 
+18.1s 82 4. Stabilitas K-Fold (std — semakin kecil semakin stabil):
+18.1s 83 SVM (ML Baseline)                  : std=0.0107
+18.1s 84 Logistic Regression (ML Baseline)  : std=0.0113
+18.1s 85 Random Forest (ML Baseline)        : std=0.0115
+18.1s 86 IndoBERT+CNN Dual-Path (Proposed)  : std=0.0155
+18.1s 87 IndoBERT-only (DL Baseline)        : std=0.0188
+18.1s 88 
+18.1s 89 5. Ranking Final (berdasarkan Test F1-Macro):
+18.1s 90 [1] IndoBERT-only (DL Baseline)        : 0.8630 ← BEST
+18.1s 91 [2] IndoBERT+CNN Dual-Path (Proposed)  : 0.8547 ← Proposed
+18.1s 92 [3] SVM (ML Baseline)                  : 0.8267
+18.1s 93 [4] Logistic Regression (ML Baseline)  : 0.8251
+18.1s 94 [5] Random Forest (ML Baseline)        : 0.7966
+18.1s 95 
+18.1s 96 ✔ analisis_komparatif selesai.
+18.1s 97 Verifikasi nilai hardcode vs CSV yang di-restore...
+18.1s 98 ✅ BERT-only F1-Macro: 0.863 (match)
+18.1s 99 ✅ SVM F1-Macro: 0.8267 (match)
+18.1s 100 ✅ LogisticRegression F1-Macro: 0.8251 (match)
+18.1s 101 ✅ RandomForest F1-Macro: 0.7966 (match)
+18.1s 102 
+18.1s 103 ✅ Semua nilai terverifikasi — konsisten dengan CSV.
+18.1s 104 =================================================================
+18.1s 105 OUTPUT NOTEBOOK 06 — MODEL COMPARISON
+18.1s 106 =================================================================
+18.1s 107 ✔ model_comparison_summary.csv                  Tabel ringkasan semua metrik semua model (CSV)
+18.1s 108 ✔ comparison_f1macro.png                        F1-Macro test set vs K-Fold comparison
+18.1s 109 ✔ comparison_metrics_full.png                   Grouped bar — metrik lengkap semua model
+18.1s 110 ✔ comparison_perclass_f1.png                    Per-class F1 semua model
+18.1s 111 ✔ comparison_kfold_stability.png                Stabilitas K-Fold — error bar mean ± std
+18.1s 112 ✔ comparison_radar.png                          Radar chart — profil multi-dimensi
+18.1s 113 ✔ comparison_heatmap.png                        Heatmap — semua metrik semua model
+18.1s 114 
+18.1s 115 Pipeline penelitian selesai.
+18.1s 116 ─────────────────────────────────────────────────────────────────
+18.1s 117 Ringkasan final:
+18.1s 118 [1] IndoBERT-only (DL Baseline)        : F1=0.8630 | Acc=0.8668
+18.1s 119 [2] IndoBERT+CNN Dual-Path (Proposed)  : F1=0.8547 | Acc=0.8570
+18.1s 120 [3] SVM (ML Baseline)                  : F1=0.8267 | Acc=0.8322
+18.1s 121 [4] Logistic Regression (ML Baseline)  : F1=0.8251 | Acc=0.8284
+18.1s 122 [5] Random Forest (ML Baseline)        : F1=0.7966 | Acc=0.8006
+18.1s 123 ─────────────────────────────────────────────────────────────────
+18.1s 124 Seluruh hasil siap untuk penulisan Bab 4 (Hasil dan Pembahasan).
+24.5s 125 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+24.5s 126 cells[i][c] = re.sub('\\\\\|', '|', cell)
+24.8s 127 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+24.8s 128 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+25.6s 129 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+26.0s 130 [NbConvertApp] Writing 47850 bytes to __notebook__.ipynb
+29.2s 131 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+30.4s 132 [NbConvertApp] Writing 401591 bytes to __results__.html
