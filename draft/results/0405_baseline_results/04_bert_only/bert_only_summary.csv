@@ -1,2 +1,0 @@
-model,architecture,data_condition,test_accuracy,test_precision,test_recall,test_f1_macro,test_f1_weighted,f1_positive,f1_negative,f1_neutral,kfold_f1_macro_mean,kfold_f1_macro_std,lr_bert,batch_size,weight_decay
-IndoBERT-only (Baseline DL),IndoBERT → [CLS] → Dropout(0.1) → Dense(3),S1,0.857,0.8562,0.8502,0.8497,0.8549,0.8946,0.8715,0.7831,0.8454,0.0106,1e-05,32,0.01
