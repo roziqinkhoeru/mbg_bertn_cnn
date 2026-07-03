@@ -319,20 +319,35 @@ Selected result figures:
 
 ## Reproducibility
 
-The notebooks were developed for **Google Colab** and **Kaggle** (NVIDIA **Tesla T4**,
-15.6 GB VRAM; PyTorch 2.x + CUDA). Full training spans ~4 sessions (~27–28 GPU-hours
-across the three search phases).
+### Environment
+
+| Notebook                         | Platform            | Why                                                                                                                    |
+| -------------------------------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `00_crawling_data_x.ipynb`       | **Google Colab**    | `tweet-harvest` (Node.js + Playwright) is set up for the Colab runtime; needs an X auth token.                         |
+| `01`–`03` (data prep → training) | **Kaggle Notebook** | uniform `/kaggle/input` (read-only) → `/kaggle/working` (output) file management; GPU **Tesla T4** (15.6 GB) for `03`. |
+
+The three Kaggle notebooks follow one **consistent file convention**: inputs are read
+from `/kaggle/input/<dataset-slug>/` and every artifact is written to
+`/kaggle/working/`. Because Kaggle resets `/kaggle/working/` each session, each stage's
+output is published as a Kaggle Dataset and attached as the next stage's input. Full
+training spans ~4 sessions (~27–28 GPU-hours across the three search phases).
 
 **Core dependencies:** `torch`, `transformers`, `scikit-learn`, `pandas`, `numpy`,
-`matplotlib`, `seaborn`, `tqdm` (Python 3.10+). Crawling additionally requires
-Node.js 20 and `tweet-harvest@2.7.1`.
+`matplotlib`, `seaborn`, `tqdm` (Python 3.10+; preinstalled on the Kaggle image).
+Crawling additionally requires Node.js 20 and `tweet-harvest@2.7.1` (Colab).
 
-**Suggested run order:**
+**Run order & dataset chaining:**
 
-1. `00_crawling_data_x.ipynb` — collect raw tweets (requires your own X auth token).
-2. `01_data_preparation.ipynb` — merge, deduplicate, and stratified-sample.
-3. `02_preprocessing_and_labeling.ipynb` — preprocess, pseudo-label, compute Cohen's κ.
-4. `03_indobert_cnn_training.ipynb` — grid search, 5-fold CV, final evaluation.
+| #   | Notebook (platform)                      | Input dataset(s)                      | Key output → next dataset                                         |
+| --- | ---------------------------------------- | ------------------------------------- | ----------------------------------------------------------------- |
+| 0   | `00_crawling_data_x` (Colab)             | X auth token                          | raw CSV batches → `mbg-raw-tweets`                                |
+| 1   | `01_data_preparation` (Kaggle)           | `mbg-raw-tweets`                      | `mbg_sampled.csv` → _(manual annotation)_ → `mbg-sampled`         |
+| 2   | `02_preprocessing_and_labeling` (Kaggle) | `mbg-sampled`, `mbg-kamus`            | `final_mbg_labeled.csv` → _(manual `label` fill)_ → `mbg-labeled` |
+| 3   | `03_indobert_cnn_training` (Kaggle)      | `mbg-labeled`, `mbg-training-outputs` | `saved_models/indobert_cnn_dualpath_S2.pt`                        |
+
+> The `mbg-kamus` dataset holds the five lexicons in [`preprocessing/kamus/`](preprocessing/kamus/).
+> Enable **Internet: On** in Kaggle Settings so `02`/`03` can download the IndoRoBERTa /
+> IndoBERT weights and the Nasal colloquial lexicon.
 
 Determinism is enforced with a fixed `seed = 42` across `random`, `numpy`, `torch`,
 CUDA, and the stratified train/test split; the test-set indices are persisted
