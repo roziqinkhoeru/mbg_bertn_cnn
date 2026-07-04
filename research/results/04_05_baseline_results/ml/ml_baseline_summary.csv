@@ -1,4 +1,0 @@
-model,description,feature,data_condition,kfold_f1_macro_mean,kfold_f1_macro_std,kfold_f1_weighted_mean,kfold_accuracy_mean,test_accuracy,test_precision,test_recall,test_f1_macro,test_f1_weighted,f1_positive,f1_negative,f1_neutral,final_train_time_sec,kfold_total_time_min
-SVM,"Linear SVM (C=1.0, class_weight=balanced)",TF-IDF,S1,0.8023,0.0107,0.8072,0.8069,0.8322,0.828,0.8269,0.8267,0.8313,0.8658,0.8482,0.7661,0.09,0.04
-LogisticRegression,"Logistic Regression (C=1.0, OvR, L2, class_weight=balanced)",TF-IDF,S1,0.8029,0.0113,0.8072,0.8065,0.8284,0.8251,0.8284,0.8251,0.8287,0.856,0.8416,0.7778,0.19,0.05
-RandomForest,"Random Forest (n=200, class_weight=balanced)",TF-IDF,S1,0.7706,0.0115,0.776,0.7758,0.8006,0.7975,0.7995,0.7966,0.8005,0.8299,0.8143,0.7457,8.3,0.54
