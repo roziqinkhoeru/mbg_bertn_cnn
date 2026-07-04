@@ -46,17 +46,17 @@ Setiap tahap dibuat sebagai notebook mandiri di `research/pipeline/`, dengan sel
 ```
 mbg_bert_cnn/
 ├── dataset/
-│   ├── raw/                              # hasil crawling mentah (git-ignored)
+│   ├── raw/                                  # hasil crawling mentah (git-ignored)
 │   │   ├── makan_bergizi_gratis/
 │   │   └── mbg/
-│   ├── merge/                            # data merge dan validasi (git-ignored)
+│   ├── merge/                                # data merge dan validasi (git-ignored)
 │   └── final/
 │       ├── raw_sampling_mbg.csv              # sampel tweet pra-anotasi
 │       ├── raw_sample_labeled_mbg.csv        # working file anotasi manual
 │       ├── final_validated_mbg.csv           # label tervalidasi + metadata
 │       └── final_mbg_labeled.csv             # ★ korpus final berlabel
 │
-├── preprocessing/kamus/                  # kamus custom domain MBG
+├── preprocessing/kamus/                      # kamus custom domain MBG
 │   ├── kamus_alay_mbg.csv
 │   ├── demoji_code_mbg.csv
 │   ├── akun_x_mbg.csv
@@ -64,12 +64,13 @@ mbg_bert_cnn/
 │   └── additional_stopwords_mbg.csv
 │
 ├── research/
-│   ├── pipeline/                         # ★ empat notebook pipeline utama
+│   ├── pipeline/                             # ★ empat notebook pipeline utama
 │   │   ├── 00_crawling_data_x.ipynb
 │   │   ├── 01_data_preparation.ipynb
 │   │   ├── 02_preprocessing_and_labeling.ipynb
 │   │   └── 03_indobert_cnn_training.ipynb
 │   └── results/
+│       ├── 00_exploration/                   # eksplorasi data
 │       ├── 01_data_preparation/              # tren temporal, distribusi sampling
 │       ├── 02_preprocessing_labeling/        # distribusi confidence, IAA
 │       └── 03_model_results/                 # log, metrik CV, model checkpoint
