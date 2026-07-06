@@ -1,6 +1,6 @@
 # Tutorial Penggunaan
 
-Panduan reproduksi penelitian dari crawling data hingga evaluasi model. Dokumen ini fokus pada langkah eksekusi. Untuk detail arsitektur, metrik, dan justifikasi metodologis, lihat [`README.md`](README.md) dan Manual Book HKI.
+Panduan reproduksi penelitian dari crawling data hingga evaluasi model. Dokumen ini fokus pada langkah eksekusi. Untuk detail arsitektur, metrik, dan justifikasi metodologis, lihat [`README.md`](README.md).
 
 ---
 
@@ -21,10 +21,20 @@ Perkiraan waktu total: sekitar 28 jam mesin GPU T4 untuk training model, ditamba
 
 ### 1. Clone atau download repositori
 
+Repositori tersedia melalui dua sumber:
+
+**GitHub (utama):**
+
 ```bash
-git clone https://github.com/username/mbg_bert_cnn.git
-cd mbg_bert_cnn
+git clone https://github.com/roziqinkhoeru/mbg_bertn_cnn.git
+cd mbg_bertn_cnn
 ```
+
+**Google Drive (alternatif dengan isi paling lengkap):**
+
+<https://drive.google.com/drive/folders/1t7SyuepCoS5djYdkbmraAitj2y0-wDka?usp=sharing>
+
+> Google Drive menyimpan **seluruh artefak penelitian** termasuk dataset mentah hasil crawling, dataset merge, hasil eksperimen tiap fase, serta checkpoint model. File-file ini dikecualikan dari GitHub karena batasan ukuran dan ketentuan platform. Gunakan Drive apabila membutuhkan data lengkap peneliti untuk verifikasi atau ingin melewati tahap crawling.
 
 ### 2. Upload kamus ke Kaggle
 
@@ -42,9 +52,11 @@ Kamus ini akan menjadi input untuk NB02.
 
 ## Tahap 1: Crawling Data (NB00, Google Colab)
 
+> **Alternatif tanpa crawling:** Dataset mentah lengkap hasil crawling peneliti tersedia pada Google Drive (folder `dataset/raw/`). Jika ingin melewati tahap ini, download folder tersebut kemudian lanjut ke bagian "Persiapan untuk tahap berikutnya" untuk mengupload sebagai Kaggle Dataset.
+
 Notebook ini menggunakan library [`tweet-harvest`](https://github.com/helmisatria/tweet-harvest) v2.7.1 oleh Helmi Satria. Untuk penjelasan mekanisme crawling dan cara mendapatkan `auth_token` X secara lengkap, silakan merujuk pada artikel resmi author:
 
-> https://helmisatria.com/blog/cara-crawl-mendapatkan-data-twitter-dengan-filter-waktu-dan-lainnya
+> <https://helmisatria.com/blog/cara-crawl-mendapatkan-data-twitter-dengan-filter-waktu-dan-lainnya>
 
 ### Langkah eksekusi
 
@@ -61,8 +73,9 @@ Notebook ini menggunakan library [`tweet-harvest`](https://github.com/helmisatri
 
 ### Persiapan untuk tahap berikutnya
 
-- Download seluruh isi folder `MyDrive/mbg_bert_cnn/dataset/raw/` ke lokal.
+- Download seluruh isi folder `MyDrive/mbg_bert_cnn/dataset/raw/` ke lokal (atau ambil dari Google Drive peneliti sesuai alternatif di atas).
 - Buat Kaggle Dataset baru dengan slug `mbg-raw-tweets` dengan struktur folder:
+
   ```
   mbg-raw-tweets/
   ├── makan_bergizi_gratis/
@@ -141,6 +154,7 @@ df.to_csv("raw_sample_labeled_mbg.csv", index=False)
 
 - Download `final_mbg_labeled.csv`.
 - Buat versi baru Kaggle Dataset `mbg-labeled` yang berisi kedua file:
+
   ```
   mbg-labeled/
   ├── raw_sample_labeled_mbg.csv
@@ -216,44 +230,48 @@ Dua opsi:
 
 1. **Eksekusi manual per sel (rekomendasi)**: klik tombol Run pada sel yang ingin dijalankan saja, tidak perlu memodifikasi kode. Cocok kalau tidak ingin menyentuh kode notebook.
 2. **Restart & Run All**: bungkus sel execution fase yang di-skip dengan `if False:` block, contohnya:
+
    ```python
    if False:
        # ... isi sel Phase 1 execution ...
        pass
    ```
+
    Setelah tidak diperlukan lagi (di sesi berikutnya), sel dapat dikembalikan seperti semula.
 
----
+| ---                                               | Isi                                                         |
+| ------------------------------------------------- | ----------------------------------------------------------- |
+| `dataset/final/final_mbg_labeled.csv`             | Korpus final berlabel (sekitar 6.642 tweet)                 |
+| `dataset/final/final_validated_mbg.csv`           | Audit trail dengan label manual + IndoRoBERTa + confidence  |
+| `research/results/01_data_preparation/`           | Chart tren temporal, distribusi sampling, EDA panjang token |
+| `research/results/02_preprocessing_labeling/`     | Chart distribusi confidence dan hasil IAA                   |
+| `research/results/03_model_results/`              | Metrik CSV per fase, PNG visualisasi, prediksi test set     |
+| `research/results/03_model_results/saved_models/` | Model checkpoint `.pt` + IndoRoBERTa + confidence           |
+| `research/results/01_data_preparation/`           | Chart tren temporal, distribusi sampling, EDA panjang token |
+| `research/results/02_preprocessing_labeling/`     | Chart distribusi confidence dan hasil IAA                   |
+| `research/results/03_model_results/`              | Metrik CSV per fase, PNG visualisasi, prediksi test set     |
+| `research/results/03_model_results/saved_models/` | Model checkpoint `.pt`                                      |
 
-## Ringkasan Output Akhir
-
-| Lokasi | Isi |
-|---|---|
-| `dataset/final/final_mbg_labeled.csv` | Korpus final berlabel (sekitar 6.642 tweet) |
-| `dataset/final/final_validated_mbg.csv` | Audit trail dengan label manual + IndoRoBERTa + confidence |
-| `research/results/01_data_preparation/` | Chart tren temporal, distribusi sampling, EDA panjang token |
-| `research/results/02_preprocessing_labeling/` | Chart distribusi confidence dan hasil IAA |
-| `research/results/03_model_results/` | Metrik CSV per fase, PNG visualisasi, prediksi test set |
-| `research/results/03_model_results/saved_models/` | Model checkpoint `.pt` |
+> Seluruh output final peneliti juga tersedia pada Google Drive (link di Setup Awal), termasuk model checkpoint terlatih apabila ingin langsung digunakan tanpa training ulang.
 
 ---
 
 ## Troubleshooting
 
-**Crawling mengembalikan 0 tweet**  
+**Crawling mengembalikan 0 tweet**
 `auth_token` X kemungkinan telah expired. Refresh cookie dari browser dan set ulang variabel `TWITTER_AUTH_TOKEN` di NB00.
 
-**Terkena rate limit X saat crawling**  
+**Terkena rate limit X saat crawling**
 Tunggu 15 sampai 30 menit sebelum mencoba kembali. Kurangi `LIMIT` per sesi jika sering terkena.
 
-**Cohen's Kappa NB02 di bawah 0,61**  
+**Cohen's Kappa NB02 di bawah 0,61**
 Review ulang tweet dengan `confidence_roberta < 0.60` (tersaji di distribusi confidence). Perbaiki anotasi manual yang meragukan pada baris tersebut lalu jalankan ulang NB02.
 
-**Kaggle GPU quota habis**  
+**Kaggle GPU quota habis**
 Batas free tier sekitar 30 jam GPU per minggu. Tunggu reset mingguan atau lanjutkan sesi berikutnya di minggu depan.
 
-**File tidak ter-restore di NB03 sesi 2 ke atas**  
+**File tidak ter-restore di NB03 sesi 2 ke atas**
 Pastikan slug Kaggle Dataset input persis bernama `mbg-training-outputs` dan versi terbaru sudah di-attach. Cek juga output sel Konfigurasi. Jika tidak muncul "Restoring output sesi sebelumnya", berarti dataset belum terdeteksi.
 
-**Sel `assert` gagal di awal Phase 2 atau Phase 3**  
+**Sel `assert` gagal di awal Phase 2 atau Phase 3**
 Variabel `BEST_*` yang direferensikan belum diupdate dari output fase sebelumnya. Pesan error akan menyebutkan variabel yang bermasalah, buka sel Konfigurasi dan isi nilainya sesuai output fase sebelumnya.
