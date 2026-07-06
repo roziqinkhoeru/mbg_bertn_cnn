@@ -1,0 +1,67 @@
+================================================================
+ ANALISIS SENTIMEN OPINI PUBLIK MENGENAI PROGRAM MAKAN BERGIZI
+ GRATIS MENGGUNAKAN BERT-CNN
+================================================================
+
+Peneliti     : Khoeru Roziqin (24060119120031)
+Program Studi: S1 Informatika, Fakultas Sains dan Matematika,
+               Universitas Diponegoro
+Skripsi      : Analisis Sentimen Opini Publik di Platform Media
+               Sosial X Mengenai Program Makan Bergizi Gratis
+               Menggunakan BERT-CNN
+
+----------------------------------------------------------------
+ RINGKASAN
+----------------------------------------------------------------
+
+Repositori ini berisi pipeline penelitian lengkap untuk
+klasifikasi sentimen opini publik di platform X mengenai Program
+Makan Bergizi Gratis (MBG). Model yang diusulkan adalah arsitektur
+Dual-Path yang menggabungkan IndoBERT dengan CNN 1D untuk
+klasifikasi 3 kelas: positive, negative, dan neutral.
+
+Pipeline terdiri dari 4 tahap yang dijalankan berurutan:
+  00 - Crawling data (Google Colab)
+  01 - Data preparation (Kaggle)
+  02 - Preprocessing dan pelabelan (Kaggle)
+  03 - Training model IndoBERT+CNN Dual-Path (Kaggle)
+
+----------------------------------------------------------------
+ AKSES REPOSITORI
+----------------------------------------------------------------
+
+GitHub (utama):
+  https://github.com/roziqinkhoeru/mbg_bertn_cnn.git
+
+Google Drive (isi lengkap termasuk dataset dan checkpoint model):
+  https://drive.google.com/drive/folders/1t7SyuepCoS5djYdkbmraAitj2y0-wDka
+
+----------------------------------------------------------------
+ DOKUMENTASI
+----------------------------------------------------------------
+
+README.md   - Ringkasan penelitian, struktur repositori, hasil
+TUTORIAL.md - Panduan reproduksi langkah demi langkah
+LICENSE     - Lisensi (The Unlicense, public domain)
+
+----------------------------------------------------------------
+ ENVIRONMENT
+----------------------------------------------------------------
+
+Notebook 00 : Google Colab (tweet-harvest via Node.js)
+Notebook 01 : Kaggle Notebook (CPU)
+Notebook 02 : Kaggle Notebook (GPU T4 dan Internet aktif)
+Notebook 03 : Kaggle Notebook (GPU T4, sekitar 28 jam total, 4 sesi)
+
+Model dasar : indobenchmark/indobert-base-p2
+Bahasa data : Bahasa Indonesia (lang:id)
+
+----------------------------------------------------------------
+ LISENSI
+----------------------------------------------------------------
+
+Dirilis ke domain publik di bawah The Unlicense. Data tweet dan
+model pre-trained pihak ketiga tetap tunduk pada ketentuan
+platform dan lisensi model masing-masing.
+
+================================================================
